@@ -5,7 +5,7 @@ namespace Tests;
 use PHPUnit\Framework\TestCase;
 use Bonfim\Component\View\Inheritance;
 
-class InheritanceTests extends TestCase
+class InheritanceTest extends TestCase
 {
     public function testBasicInheritance(): void
     {
