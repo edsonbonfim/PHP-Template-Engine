@@ -1,4 +1,4 @@
-# Getting started
+# BonfimTPL 1.0 Documentation
 
 [![Latest Version][ico-version]][link-version]
 [![Build Status][ico-travis]][link-travis]
@@ -6,6 +6,10 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![StyleCI][ico-styleci]][link-styleci]
 [![Total Downloads][ico-downloads]][link-downloads]
+
+This is the full documentation for BonfimTPL 1.0.x
+
+# Getting started
 
 BonfimTPL is an PHP template engine and provide a better way to produce dynamic web pages.
 
