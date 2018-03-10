@@ -11,6 +11,6 @@ BonfimTPL requires *PHP >= 7.1.0*
 
 BonfimTPL is avaliable on [packagist.org](https://packagist.org/packages/bonfim/tpl) to do so, install [Composer](https://getcomposer.org/download/) and run the following command to get the last version:
 
-    ``` sh
+    ```
     $ composer require bonfim/tpl
     ```
