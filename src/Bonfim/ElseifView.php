@@ -6,6 +6,8 @@ trait ElseifView
 {
     private $elseif = array();
 
+    abstract public function setCondition($condition): string;
+    
     private function setElseifContent()
     {
         $pattern = '/{\s?elseif (.*?)\s?([><!=])(=)?(=)?\s?(.*?)\s?}(.*?){end}/is';
