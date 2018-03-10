@@ -132,12 +132,12 @@ class IfTpl
         $this->ifConten = str_replace('{end}', '', $this->ifConten);
     }
 
-    private function isVariable(mixed $term)
+    private function isVariable($term)
     {
         return (is_numeric($term) || $this->isStringValue((string) $term) || $this->isReservedKey($term)) ? false : true;
     }
 
-    private function isReservedKey(mixed $key)
+    private function isReservedKey($key)
     {
         return ($key == "null" || $key == "true" || $key == "false") ? true : false;
     }
