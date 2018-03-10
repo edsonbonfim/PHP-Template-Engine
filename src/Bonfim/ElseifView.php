@@ -23,8 +23,9 @@ trait ElseifView
 
     private function elseif(): void
     {
-        if (count($this->elseif) != 0) {
-            for ($i = 0; $i < count($this->elseif); $i++) {
+        $count = count($this->elseif);
+        if ($count != 0) {
+            for ($i = 0; $i < $count; $i++) {
                 $this->replace .= "<?php elseif({$this->elseif[$i]['firstCondition']}";
                 $this->replace .= " {$this->elseif[$i]['operator']}";
                 $this->replace .= " {$this->elseif[$i]['secondCondition']}): ?>";
