@@ -5,7 +5,7 @@ namespace Tests;
 use PHPUnit\Framework\TestCase;
 use Bonfim\Component\View\ForeachTpl;
 
-class ForeachTests extends TestCase
+class ForeachTest extends TestCase
 {
     public function testBasicForeach(): void
     {
