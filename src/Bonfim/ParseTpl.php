@@ -17,7 +17,7 @@ trait ParseTpl
         $file = getcwd() . '/' . $this->config['template_dir'] . "/$view.html";
 
         if (!file_exists($file)) {
-            throw new \Exception("$file template not found");
+            throw new \Exception("$file template not found"); // @codeCoverageIgnore
         }
 
         return $this->removeTags(file_get_contents($file));

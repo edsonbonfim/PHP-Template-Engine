@@ -10,8 +10,10 @@ class ViewTest extends TestCase
     public function testView()
     {
         $test = fopen('tests/Bonfim/test.html', 'w+');
-        fwrite($test, 'Test View');
+        fwrite($test, '{title}');
         fclose($test);
+
+        View::assign('title', 'Test View');
 
         View::config([
             'template_dir' => 'tests/Bonfim'
