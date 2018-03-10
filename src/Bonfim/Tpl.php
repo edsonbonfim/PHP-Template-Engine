@@ -19,17 +19,21 @@ class Tpl
 
         $this->data = array_merge($data, $this->data);
         extract($this->data);
+
         $tmp = tmpfile();
 
-        fwrite($tmp, $content);
-        fseek($tmp, 0);
+        if ($tmp !== false)
+        {
+            fwrite($tmp, $content);
+            fseek($tmp, 0);
 
-        ob_start();
-        $file = stream_get_meta_data($tmp);
+            ob_start();
+            $file = stream_get_meta_data($tmp);
 
-        include $file['uri'];
-        $content = ob_get_clean();
-        fclose($tmp);
+            include $file['uri'];
+            $content = ob_get_clean();
+            fclose($tmp);
+        }
         return $content;
     }
 }
