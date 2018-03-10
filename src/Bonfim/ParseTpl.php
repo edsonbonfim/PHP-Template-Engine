@@ -4,11 +4,8 @@ namespace Bonfim\Component\View;
 
 trait ParseTpl
 {
-    protected $config = array();
-    protected $data = array(
-        '__version' => '1.0.0'
-    );
-    protected $view = '';
+    protected $config;
+    protected $data = ['__version' => '1.0.0'];
 
     public function config(array $config)
     {

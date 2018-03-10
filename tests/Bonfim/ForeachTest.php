@@ -9,12 +9,12 @@ class ForeachTest extends TestCase
 {
     public function testBasicForeach(): void
     {
-        $expected  = '<?php foreach($authors as $author): ?>';
-        $expected .= '<p>{author.name}</p>';
+        $expected  = '<?php foreach($users[\'admin\'] as $admin): ?>';
+        $expected .= '<p>{admin.name}</p>';
         $expected .= '<?php endforeach; ?>';
 
-        $content  = '{foreach authors as author}';
-        $content .= '<p>{author.name}</p>';
+        $content  = '{foreach users.admin as admin}';
+        $content .= '<p>{admin.name}</p>';
         $content .= '{/foreach}';
 
         $this->assertEquals($expected, (string) new ForeachTpl($content));

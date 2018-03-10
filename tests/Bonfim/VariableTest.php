@@ -14,4 +14,12 @@ class VariableTest extends TestCase
 
         $this->assertEquals($expected, (string) new VariableTpl($content));
     }
+
+    public function testFilterUpper()
+    {
+        $expected = '<?php echo(ucwords($name)); ?>';
+        $content  = '{name | upper}';
+
+        $this->assertEquals($expected, (string) new VariableTpl($content));
+    }
 }

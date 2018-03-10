@@ -9,11 +9,11 @@ class IfTest extends TestCase
 {
     public function testBasicIf()
     {
-        $expected  = '<?php if($status === true): ?>';
+        $expected  = '<?php if($status[\'code\'] === true): ?>';
         $expected .= 'True';
         $expected .= '<?php endif; ?>';
 
-        $content  = '{if status === true}';
+        $content  = '{if status.code === true}';
         $content .= 'True';
         $content .= '{/if}';
 
