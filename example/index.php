@@ -9,6 +9,7 @@ View::config([
     'cache_dir'    => 'cache'
 ]);
 
+View::assign('status', true);
 View::assign('title', 'Bonfim View Component');
 View::assign('authors', [
     [

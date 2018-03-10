@@ -7,6 +7,10 @@ use Exception;
 class VariableTpl
 {
     private $pattern = '/{\s?([\w]+.?[\w]+)\s?\|?\s?([\w]+)?\s?}/is';
+    private $match   = [];
+    private $matches = [];
+    private $replace = '';
+    private $variable = '';
 
     public function __construct(string $content)
     {
@@ -21,26 +25,41 @@ class VariableTpl
 
     private function variable(): void
     {
-        if (preg_match_all($this->pattern, $this->content, $matches, PREG_SET_ORDER)) {
-            for ($i = 0; $i < count($matches); $i++) {
-                $explode = explode('.', $matches[$i][1]);
-
-                $variable = $explode[0];
-
-                $variable = '$'.$variable;
-
-                for ($k = 1; $k < count($explode); $k++) {
-                    $variable .= "['".$explode[$k]."']";
-                }
-
-                $content = '<?php echo('.$variable.'); ?>';
-
-                if (isset($matches[$i][2]) && $matches[$i][2] == 'upper') {
-                    $content = '<?php echo(ucwords('.$variable.')); ?>';
-                }
-
-                $this->content = str_replace($matches[$i][0], $content, $this->content);
+        if (preg_match_all($this->pattern, $this->content, $this->matches, PREG_SET_ORDER)) {
+            for ($i = 0; $i < count($this->matches); $i++) {
+                $this->match = $this->matches[$i];
+                $this->getVariable();
+                $this->replace = '<?php echo('.$this->variable.'); ?>';
+                $this->filter('upper');
+                $this->content = str_replace($this->match[0], $this->replace, $this->content);
             };
+        }
+    }
+
+    private function getVariable(): void
+    {
+        $explode = explode('.', $this->match[1]);
+
+        $variable = $explode[0];
+
+        $variable = '$'.$variable;
+
+        for ($k = 1; $k < count($explode); $k++) {
+            $variable .= "['".$explode[$k]."']";
+        }
+
+        $this->variable = $variable;
+    }
+
+    private function filter(string $name): void
+    {
+        $this->$name();
+    }
+
+    private function upper(): void
+    {
+        if (isset($this->match[2]) && $this->match[2] == 'upper') {
+            $this->replace = '<?php echo(ucwords('.$this->variable.')); ?>';
         }
     }
 }

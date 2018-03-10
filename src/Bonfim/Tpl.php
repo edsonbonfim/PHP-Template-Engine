@@ -21,15 +21,18 @@ class Tpl
         extract($this->data);
         $tmp = tmpfile();
 
-        fwrite($tmp, $content);
-        fseek($tmp, 0);
+        if ($tmp)
+        {
+            fwrite($tmp, $content);
+            fseek($tmp, 0);
 
-        ob_start();
-        $file = stream_get_meta_data($tmp);
+            ob_start();
+            $file = stream_get_meta_data($tmp);
 
-        include $file['uri'];
-        $content = ob_get_clean();
-        fclose($tmp);
-        return $content;
+            include $file['uri'];
+            $content = ob_get_clean();
+            fclose($tmp);
+            return $content;
+        }
     }
 }
