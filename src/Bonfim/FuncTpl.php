@@ -2,21 +2,35 @@
 
 namespace Bonfim\Component\View;
 
-class FuncTpl extends VariableTpl
+class FuncTpl
 {
+    private $pattern = '/{\s?func ([\w]+)\((.*?)\)\s?}/is';
+    private $content;
+    private $match;
     private $funcName;
     private $funcArgs;
 
-    public function func() : void
+    public function __construct(string $content)
     {
-        if ($this->matchAll('/{\s?func ([\w]+)\((.*?)\)\s?}/is', $this->content)) {
-            $this->iterate(function ($i) {
-                $this->match = $this->matches[$i];
+        $this->content = $content;
+        $this->func();
+    }
+
+    public function __toString(): string
+    {
+        return $this->content;
+    }
+
+    public function func(): void
+    {
+        if (preg_match_all($this->pattern, $this->content, $matches, PREG_SET_ORDER)) {
+            for ($i = 0; $i < count($matches); $i++) {
+                $this->match = $matches[$i];
                 $this->setFuncName();
                 $this->setFuncArgs();
                 $content = '<?php echo('.$this->funcName.'('.$this->funcArgs.')); ?>';
-                $this->content = str_replace($this->matches[$i][0], $content, $this->content);
-            });
+                $this->content = str_replace($matches[$i][0], $content, $this->content);
+            };
         }
     }
 

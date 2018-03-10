@@ -2,7 +2,7 @@
 
 namespace Bonfim\Component\View;
 
-class IfTpl extends FuncTpl
+class IfTpl
 {
     private $pattern = '/{\s?if (.*?)\s?([><!=])(=)?(=)?\s?(.*?)\s?}(.*?){\s?\/if\s?}/is';
     private $block = '';
@@ -12,18 +12,31 @@ class IfTpl extends FuncTpl
     private $elseif = array();
     private $ifConten = '';
     private $elseContent = '';
+    private $content;
+    private $match;
 
-    public function if() : void
+    public function __construct(string $content)
     {
-        if ($this->matchAll($this->pattern, $this->content)) {
-            for ($i = 0; $i < count($this->matches); $i++) {
-                $this->match = $this->matches[$i];
+        $this->content = $content;
+        $this->if();
+    }
 
-                $this->setBlock();
-                $this->setOperator();
-                $this->setFirstCondition();
-                $this->setSecondCondition();
-                $this->setContents();
+    public function __toString(): string
+    {
+        return $this->content;
+    }
+
+    private function if() : void
+    {
+        if (preg_match_all($this->pattern, $this->content, $matches, PREG_SET_ORDER)) {
+            for ($i = 0; $i < count($matches); $i++) {
+                $this->match = $matches[$i];
+
+                $this->setIfBlock();
+                $this->setIfOperator();
+                $this->setIfFirstCondition();
+                $this->setIfSecondCondition();
+                $this->setIfContents();
 
                 $content  = "<?php if({$this->firstCondition} {$this->operator} {$this->secondCondition}): ?>";
                 $content .= trim($this->ifConten);
@@ -49,22 +62,22 @@ class IfTpl extends FuncTpl
         }
     }
 
-    private function setBlock() : void
+    private function setIfBlock() : void
     {
         $this->block = $this->match[0];
     }
 
-    private function setOperator() : void
+    private function setIfOperator() : void
     {
         $this->operator = implode('', array_slice($this->match, 2, 3));
     }
 
-    private function setFirstCondition() : void
+    private function setIfFirstCondition() : void
     {
         $this->firstCondition = $this->setCondition($this->match[1]);
     }
 
-    private function setSecondCondition() : void
+    private function setIfSecondCondition() : void
     {
         $this->secondCondition = $this->setCondition($this->match[5]);
     }
@@ -84,7 +97,7 @@ class IfTpl extends FuncTpl
         return $condition;
     }
 
-    private function setContents()
+    private function setIfContents()
     {
         $this->setElseContent();
         $this->setElseifContent();

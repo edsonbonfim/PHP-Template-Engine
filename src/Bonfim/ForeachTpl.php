@@ -2,23 +2,35 @@
 
 namespace Bonfim\Component\View;
 
-class ForeachTpl extends IfTpl
+class ForeachTpl
 {
     private $pattern = '/{\s?foreach (.*?) as ([\w]+)\s?}(.*?){\s?\/foreach\s?}/is';
-
+    private $content;
     private $block = '';
     private $array = '';
     private $callback = '';
     private $foreachContent = '';
+    private $match;
 
-    public function foreach() : void
+    public function __construct(string $content)
     {
-        if ($this->matchAll($this->pattern, $this->content)) {
-            $this->iterate(function ($i) {
-                $this->match = $this->matches[$i];
-                $this->setBlock();
-                $this->setArray();
-                $this->setCallback();
+        $this->content = $content;
+        $this->foreach();
+    }
+
+    public function __toString(): string
+    {
+        return $this->content;
+    }
+
+    private function foreach() : void
+    {
+        if (preg_match_all($this->pattern, $this->content, $matches, PREG_SET_ORDER)) {
+            for ($i = 0; $i < count($matches); $i++) {
+                $this->match = $matches[$i];
+                $this->setForeachBlock();
+                $this->setForeachArray();
+                $this->setForeachCallback();
                 $this->setForeachContent();
 
                 $content  = "<?php foreach({$this->array} as {$this->callback}): ?>";
@@ -26,16 +38,16 @@ class ForeachTpl extends IfTpl
                 $content .= "<?php endforeach; ?>";
 
                 $this->content = str_replace($this->block, $content, $this->content);
-            });
+            };
         }
     }
 
-    private function setBlock() : void
+    private function setForeachBlock() : void
     {
         $this->block = $this->match[0];
     }
 
-    private function setArray() : void
+    private function setForeachArray() : void
     {
         $explode = explode('.', $this->match[1]);
 
@@ -48,7 +60,7 @@ class ForeachTpl extends IfTpl
         $this->array = $variableArray;
     }
 
-    private function setCallback() : void
+    private function setForeachCallback() : void
     {
         $this->callback = '$'.$this->match[2];
     }

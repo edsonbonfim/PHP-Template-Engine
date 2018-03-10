@@ -2,19 +2,33 @@
 
 namespace Bonfim\Component\View;
 
-class IncludeTpl extends ForeachTpl
+class IncludeTpl
 {
-    private $file;
+    private $content;
+    private $config;
     private $pattern = '/{\s?include \'?"?(.*?)"?\'?\s?}/is';
 
-    public function include() : void
+    public function __construct(string $content, array $config)
     {
-        if ($this->matchAll($this->pattern, $this->content)) {
-            $this->iterate(function ($i) {
-                $this->match = $this->matches[$i];
-                $content = file_get_contents("{$this->config['template_dir']}/{$this->match[1]}.html");
-                $this->content = str_replace($this->matches[$i][0], $content, $this->content);
-            });
+        $this->config  = $config;
+        $this->content = $content;
+
+        $this->include();
+    }
+
+    public function __toString(): string
+    {
+        return $this->content;
+    }
+
+    public function include()
+    {
+        if (preg_match_all($this->pattern, $this->content, $matches, PREG_SET_ORDER)) {
+            for ($i = 0; $i < count($matches); $i++) {
+                $match = $matches[$i];
+                $replace = file_get_contents("{$this->config['template_dir']}/{$match[1]}.html");
+                $this->content = str_replace($matches[$i][0], $replace, $this->content);
+            };
         }
     }
 }

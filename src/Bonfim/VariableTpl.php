@@ -4,19 +4,28 @@ namespace Bonfim\Component\View;
 
 use Exception;
 
-class VariableTpl extends ParseTpl
+class VariableTpl
 {
-    public function variable() : void
+    private $pattern = '/{\s?([\w]+.?[\w]+)\s?\|?\s?([\w]+)?\s?}/is';
+
+    public function __construct(string $content)
     {
-        if ($this->matchAll('/{\s?([\w]+.?[\w]+)\s?\|?\s?([\w]+)?\s?}/is', $this->content)) {
-            $this->iterate(function ($i) {
-                $explode = explode('.', $this->matches[$i][1]);
+        $this->content = $content;
+        $this->variable();
+    }
+
+    public function __toString(): string
+    {
+        return $this->content;
+    }
+
+    private function variable(): void
+    {
+        if (preg_match_all($this->pattern, $this->content, $matches, PREG_SET_ORDER)) {
+            for ($i = 0; $i < count($matches); $i++) {
+                $explode = explode('.', $matches[$i][1]);
 
                 $variable = $explode[0];
-
-                if (!array_key_exists($variable, $this->data)) {
-                    throw new Exception("Undefined variable: {$variable} in {$this->view}", 1);
-                }
 
                 $variable = '$'.$variable;
 
@@ -26,12 +35,12 @@ class VariableTpl extends ParseTpl
 
                 $content = '<?php echo('.$variable.'); ?>';
 
-                if ($this->matches[$i][2] == 'upper') {
+                if (isset($matches[$i][2]) && $matches[$i][2] == 'upper') {
                     $content = '<?php echo(ucwords('.$variable.')); ?>';
                 }
 
-                $this->content = str_replace($this->matches[$i][0], $content, $this->content);
-            });
+                $this->content = str_replace($matches[$i][0], $content, $this->content);
+            };
         }
     }
 }
