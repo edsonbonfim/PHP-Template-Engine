@@ -8,14 +8,7 @@ class Tpl
 
     public function render(string $view, array $data = []) : string
     {
-        $content = $this->getContent($view);
-        $content = new Inheritance($content, $this->config);
-        $content = new IncludeTpl($content, $this->config);
-        $content = new ForeachTpl($content);
-        $content = new IfTpl($content);
-        $content = new FuncTpl($content);
-        $content = new VariableTpl($content);
-
+        $content = $this->getContent();
 
         $this->data = array_merge($data, $this->data);
         extract($this->data);
@@ -33,6 +26,19 @@ class Tpl
             $content = ob_get_clean();
             fclose($tmp);
         }
+        return $content;
+    }
+
+    private function getContent()
+    {
+        $content = $this->getContent($view);
+        $content = new Inheritance($content, $this->config);
+        $content = new IncludeTpl($content, $this->config);
+        $content = new ForeachTpl($content);
+        $content = new IfTpl($content);
+        $content = new FuncTpl($content);
+        $content = new VariableTpl($content);
+
         return $content;
     }
 }
