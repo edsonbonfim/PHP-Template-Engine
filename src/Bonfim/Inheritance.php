@@ -45,7 +45,8 @@ class Inheritance
     private function replace(): void
     {
         foreach ($this->blocks as $key => $value) {
-            $this->content = preg_replace('/{\s?block \'?"?'.$key.'"?\'?\s?}(.*?){\s?\/block\s?}/is', $value, $this->content);
+            $pattern = '/{\s?block \'?"?'.$key.'"?\'?\s?}(.*?){\s?\/block\s?}/is';
+            $this->content = preg_replace($pattern, $value, $this->content);
         }
 
         $this->content = preg_replace('/{\s?block \'?"?[\w]+"?\'?\s?}/is', '', $this->content);

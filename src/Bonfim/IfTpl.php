@@ -44,7 +44,9 @@ class IfTpl
 
                 if (count($this->elseif) != 0) {
                     for ($k = 0; $k < count($this->elseif); $k++) {
-                        $content .= "<?php elseif({$this->elseif[$k]['firstCondition']} {$this->elseif[$k]['operator']} {$this->elseif[$k]['secondCondition']}): ?>";
+                        $content .= "<?php elseif({$this->elseif[$k]['firstCondition']}";
+                        $content .= " {$this->elseif[$k]['operator']}";
+                        $content .= " {$this->elseif[$k]['secondCondition']}): ?>";
                         $content .= trim($this->elseif[$k]['content']);
                     }
                 }
@@ -119,8 +121,8 @@ class IfTpl
 
     private function setElseifContent()
     {
-        $matches = array();
-        if (preg_match_all('/{\s?elseif (.*?)\s?([><!=])(=)?(=)?\s?(.*?)\s?}(.*?){end}/is', $this->ifConten, $matches, PREG_SET_ORDER)) {
+        $pattern = '/{\s?elseif (.*?)\s?([><!=])(=)?(=)?\s?(.*?)\s?}(.*?){end}/is';
+        if (preg_match_all($pattern, $this->ifConten, $matches, PREG_SET_ORDER)) {
             for ($i = 0; $i < count($matches); $i++) {
                 $this->ifConten = str_replace($matches[$i][0], '', $this->ifConten);
                 $this->elseif[$i]['firstCondition'] = $this->setCondition($matches[$i][1]);
@@ -134,7 +136,9 @@ class IfTpl
 
     private function isVariable($term)
     {
-        return (is_numeric($term) || $this->isStringValue((string) $term) || $this->isReservedKey($term)) ? false : true;
+        return (is_numeric($term)
+        || $this->isStringValue((string) $term)
+        || $this->isReservedKey($term)) ? false : true;
     }
 
     private function isReservedKey($key)
