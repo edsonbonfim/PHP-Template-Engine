@@ -22,8 +22,7 @@ class Tpl
 
         $tmp = tmpfile();
 
-        if ($tmp !== false)
-        {
+        if ($tmp !== false) {
             fwrite($tmp, $content);
             fseek($tmp, 0);
 
