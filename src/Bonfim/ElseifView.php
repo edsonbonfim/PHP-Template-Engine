@@ -12,7 +12,8 @@ trait ElseifView
     {
         $pattern = '/{\s?elseif (.*?)\s?([><!=])(=)?(=)?\s?(.*?)\s?}(.*?){end}/is';
         if (preg_match_all($pattern, $this->ifContent, $matches, PREG_SET_ORDER)) {
-            for ($i = 0; $i < count($matches); $i++) {
+            $count = count($matches);
+            for ($i = 0; $i < $count; $i++) {
                 $this->ifContent = str_replace($matches[$i][0], '', $this->ifContent);
                 $this->elseif[$i]['firstCondition'] = $this->setCondition($matches[$i][1]);
                 $this->elseif[$i]['secondCondition'] = $this->setCondition($matches[$i][5]);
