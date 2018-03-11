@@ -77,6 +77,7 @@ Tpl::render('test');
 
 * [Variables](#variables)
 * [Conditional Expression](#conditional-expression)
+* [Loop](#loop)
 
 ## Variables
 
@@ -145,7 +146,41 @@ Tpl::assign('age', 19);
 Adult
 ```
 
-you can also use the {if condition}content{elseif condition}content{else}content{/if} or any combination of if and else.
+## Loop
+
+Allow to loop through the value of arrays or objects.
+
+**Template:**
+``` html
+{foreach authors as author}
+    {author.name}: {author.homepage}
+{/foreach}
+```
+
+**Data:**
+``` php
+<?php
+
+$authors = [
+    [
+        'name'     => 'Edson Onildo',
+        'homepage' => 'https://github.com/EdsonOnildoJR'
+    ],
+    [
+        'name'     => 'Contributors',
+        'homepage' => 'https://github.com/EdsonOnildoJR/BonfimTPL/contributors'
+    ]
+];
+
+Tpl::assign('authors', $authors);
+```
+
+**Output:**
+``` html
+Edson Onildo: https://github.com/EdsonOnildoJR
+Contributors: https://github.com/EdsonOnildoJR/BonfimTPL/contributors
+```
+
 
 [ico-version]: https://img.shields.io/github/release/BonfimSystems/View.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/BonfimSystems/View/master.svg?style=flat-square
