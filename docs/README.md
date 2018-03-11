@@ -15,7 +15,7 @@ BonfimTPL requires **PHP >= 7.1.0**
 
 # Table of Contents
 
-* [Installation](#installation)
+* [Installation](installation.md)
 * [Basic Usage](#basic-usage)
 * [BonfimTPL Tags](#bonfimtpl-tags)
     * [Variables](#variables)
@@ -27,24 +27,6 @@ BonfimTPL requires **PHP >= 7.1.0**
 * [Security](#security)
 * [Credits](#credits)
 * [License](#license)
-
-# Installation
-
-Install composer [https://getcomposer.org/download/](https://getcomposer.org/download/)
-
-Create a **composer.json** inside your application folder:
-``` json
-{
-    "require": {
-        "bonfim/tpl": ">=1.0.0"
-    }
-}
-```
-
-Open the command line and run the following:
-``` sh
-$ composer install
-```
 
 # Basic usage
 
