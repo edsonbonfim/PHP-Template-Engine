@@ -13,6 +13,11 @@ This is the full documentation for BonfimTPL 1.0.x
 
 BonfimTPL requires **PHP >= 7.1.0**
 
+## Table of Contents
+
+* [Installation](#installation)
+* [Basic Usage](#basic-usage)
+
 ## Installation
 
 Install composer [https://getcomposer.org/download/](https://getcomposer.org/download/)
