@@ -75,10 +75,11 @@ Tpl::render('test');
 
 # BonfimTPL Tags
 
-* [{Variables}](#variables)
+* [Variables](#variables)
 * [Conditional Expression](#conditional-expression)
 * [Loop](#loop)
 * [Function](#function)
+* [Include](#include)
 
 ## Variables
 
@@ -147,6 +148,8 @@ Tpl::assign('age', 19);
 Adult
 ```
 
+you can also use the {if condition}content{elseif condition}content{else}content{/if} or any combination of if and else.
+
 ## Loop
 
 Allow to loop through the value of arrays or objects.
@@ -157,8 +160,6 @@ Allow to loop through the value of arrays or objects.
     {author.name}: {author.homepage}
 {/foreach}
 ```
-
-you can also use the {if condition}content{elseif condition}content{else}content{/if} or any combination of if and else.
 
 **Data:**
 ``` php
@@ -198,7 +199,23 @@ Use {func  funcname()} tag to execute a PHP function and print the result. You c
 2018
 ```
 
+## Include
 
+With **{include 'template'}** tag you can include external template as blocks.
+
+**Template:**
+``` html
+<h1>New user:</h1>
+{template 'userForm'}
+```
+
+**Output:**
+``` html
+<h1>New user:</h1>
+<form class="user" action="" method="post">
+    ...
+</form>
+```
 
 [ico-version]: https://img.shields.io/github/release/BonfimSystems/View.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/BonfimSystems/View/master.svg?style=flat-square
