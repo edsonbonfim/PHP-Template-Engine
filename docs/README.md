@@ -239,6 +239,10 @@ If you discover any security related issues, please email inbox.edsononildo@gmai
 - [Edson Onildo][link-author]
 - [All Contributors][link-contributors]
 
+## License
+
+The MIT License (MIT). Please see [License File](../LICENSE.md) for more information.
+
 [ico-version]: https://img.shields.io/github/release/EdsonOnildoJR/BonfimTPL.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/EdsonOnildoJR/BonfimTPL/master.svg?style=flat-square
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/EdsonOnildoJR/BonfimTPL.svg?style=flat-square
@@ -253,4 +257,4 @@ If you discover any security related issues, please email inbox.edsononildo@gmai
 [link-styleci]: https://styleci.io/repos/124528765
 [link-downloads]: https://packagist.org/packages/bonfim/view
 [link-author]: https://github.com/EdsonOnildoJR
-[link-contributors]: ../../contributors
+[link-contributors]: ../../../contributors
