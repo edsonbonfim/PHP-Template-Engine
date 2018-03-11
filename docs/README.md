@@ -39,7 +39,7 @@ $ composer install
 
 # Basic usage
 
-## Setup
+**Setup**
 
 Create an **index.php** file and require the autoload.php of Composer
 
@@ -62,7 +62,7 @@ Tpl::config([
 ]);
 ```
 
-## What are you waiting for?
+**What are you waiting for?**
 
 Assign and render template
 
@@ -74,6 +74,8 @@ Tpl::render('test');
 ```
 
 # BonfimTPL Tags
+
+* [{variable}](#{variable})
 
 ## {variable}
 
