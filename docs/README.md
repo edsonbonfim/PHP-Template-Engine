@@ -15,7 +15,7 @@ BonfimTPL requires **PHP >= 7.1.0**
 
 # Table of Contents
 
-* [Installation](installation.md)
+* [Installation](#installation)
 * [Basic Usage](#basic-usage)
 * [BonfimTPL Tags](#bonfimtpl-tags)
     * [Variables](#variables)
@@ -27,6 +27,24 @@ BonfimTPL requires **PHP >= 7.1.0**
 * [Security](#security)
 * [Credits](#credits)
 * [License](#license)
+
+# Installation
+
+Install composer [https://getcomposer.org/download/](https://getcomposer.org/download/)
+
+Create a **composer.json** inside your application folder:
+``` json
+{
+    "require": {
+        "bonfim/tpl": ">=1.0.0"
+    }
+}
+```
+
+Open the command line and run the following:
+``` sh
+$ composer install
+```
 
 # Basic usage
 
@@ -210,7 +228,7 @@ With **{include 'template'}** tag you can include external template as blocks.
 
 ## Contributing
 
-Please see [CONTRIBUTING](../CONTRIBUTING.md) and [CODE_OF_CONDUCT](../CODE_OF_CONDUCT.md) for details.
+Please see [CONTRIBUTING](https://github.com/EdsonOnildoJR/BonfimTPL/blob/master/CONTRIBUTING.md) and [CODE_OF_CONDUCT](https://github.com/EdsonOnildoJR/BonfimTPL/blob/master/CODE_OF_CONDUCT.md) for details.
 
 ## Security
 
@@ -223,7 +241,7 @@ If you discover any security related issues, please email inbox.edsononildo@gmai
 
 ## License
 
-The MIT License (MIT). Please see [License File](../LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/EdsonOnildoJR/BonfimTPL/blob/master/LICENSE.md) for more information.
 
 [ico-version]: https://img.shields.io/github/release/EdsonOnildoJR/BonfimTPL.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/EdsonOnildoJR/BonfimTPL/master.svg?style=flat-square
@@ -232,11 +250,11 @@ The MIT License (MIT). Please see [License File](../LICENSE.md) for more informa
 [ico-styleci]: https://styleci.io/repos/124528765/shield?branch=master
 [ico-downloads]: https://img.shields.io/packagist/dt/bonfim/view.svg?style=flat-square
 
-[link-version]:https://github.com/thephpleague/uri-parser/releases
+[link-version]:https://github.com/EdsonOnildoJR/BonfimTPL/releases
 [link-travis]: https://travis-ci.org/EdsonOnildoJR/BonfimTPL
 [link-scrutinizer]: https://scrutinizer-ci.com/g/EdsonOnildoJR/BonfimTPL/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/EdsonOnildoJR/BonfimTPL
 [link-styleci]: https://styleci.io/repos/124528765
 [link-downloads]: https://packagist.org/packages/bonfim/view
 [link-author]: https://github.com/EdsonOnildoJR
-[link-contributors]: ../../../contributors
+[link-contributors]: https://github.com/EdsonOnildoJR/BonfimTPL/blob/master/contributors
