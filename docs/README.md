@@ -79,6 +79,8 @@ Tpl::render('test');
 
 Variables are the dynamic content of the template, valorized on the execution of the script with Tpl::assing() static method. Variables names are case sensitive.
 
+#### Example
+
 **Template:**
 ``` html
 Welcome to {title}
@@ -96,11 +98,11 @@ Tpl::assign('title', 'BonfimTPL');
 Welcome to BonfimTPL
 ```
 
-You can add modifiers that are executed on the variables
+You can add modifiers that are executed on the variables.
 
 **Template:**
 ``` html
-Hello {name | ucwords}!
+Hello {name|ucwords}!
 ```
 
 **Data:**
