@@ -23,6 +23,10 @@ BonfimTPL requires **PHP >= 7.1.0**
     * [Loop](#loop)
     * [Function](#function)
     * [Include](#include)
+* [Contributing](#contributing)
+* [Security](#security)
+* [Credits](#credits)
+* [License](#license)
 
 # Installation
 
@@ -221,6 +225,19 @@ With **{include 'template'}** tag you can include external template as blocks.
     ...
 </form>
 ```
+
+## Contributing
+
+Please see [CONTRIBUTING](../CONTRIBUTING.md) and [CODE_OF_CONDUCT](../CODE_OF_CONDUCT.md) for details.
+
+## Security
+
+If you discover any security related issues, please email inbox.edsononildo@gmail.com instead of using the issue tracker.
+
+## Credits
+
+- [Edson Onildo][link-author]
+- [All Contributors][link-contributors]
 
 [ico-version]: https://img.shields.io/github/release/EdsonOnildoJR/BonfimTPL.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/EdsonOnildoJR/BonfimTPL/master.svg?style=flat-square
