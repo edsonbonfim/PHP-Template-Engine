@@ -76,6 +76,7 @@ Tpl::render('test');
 # BonfimTPL Tags
 
 * [Variables](#variables)
+* [Conditional Expression](#conditional-expression)
 
 ## Variables
 
@@ -118,6 +119,33 @@ Tpl::assign('name', 'edson onildo');
 ``` html
 Hello Edson Onildo!
 ```
+
+## Conditional Expression
+
+Checks an expression and print the code between {if}{else} if the conditions is true or {else}{/if} if the condition is false. Try to use nested blocks :)
+
+**Template:**
+``` html
+{if age < 18}
+    Minor
+{else}
+    Adult
+{/if}
+```
+
+**Data:**
+``` php
+<?php
+
+Tpl::assign('age', 19);
+```
+
+**Output:**
+``` html
+Adult
+```
+
+you can also use the {if condition}content{elseif condition}content{else}content{/if} or any combination of if and else.
 
 [ico-version]: https://img.shields.io/github/release/BonfimSystems/View.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/BonfimSystems/View/master.svg?style=flat-square
