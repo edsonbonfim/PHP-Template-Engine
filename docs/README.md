@@ -19,9 +19,9 @@ BonfimTPL requires **PHP >= 7.1.0**
 
 ## Installation
 
-1. Install composer [https://getcomposer.org/download/](https://getcomposer.org/download/)
+Install composer [https://getcomposer.org/download/](https://getcomposer.org/download/)
 
-2. Create a **composer.json** inside your application folder:
+Create a **composer.json** inside your application folder:
 ``` json
 {
     "require": {
@@ -30,7 +30,7 @@ BonfimTPL requires **PHP >= 7.1.0**
 }
 ```
 
-3. Open the command line and run the following:
+Open the command line and run the following:
 ``` sh
 $ composer install
 ```
@@ -44,7 +44,7 @@ Create an **index.php** file and require the autoload.php of Composer
 ``` php
 <?php
 
-    include 'vendor/autoload.php';
+include 'vendor/autoload.php';
 ```
 
 After that, let's to do all necessary configuration
@@ -52,22 +52,23 @@ After that, let's to do all necessary configuration
 ``` php
 <?php
 
-    use Bonfim\Tpl;
+use Bonfim\Tpl;
 
-    Tpl::config([
-        'template_dir' => 'path/to/templates',
-        'cache_dir'    => 'path/to/caches'
-    ]);
+Tpl::config([
+    'template_dir' => 'path/to/templates',
+    'cache_dir'    => 'path/to/caches'
+]);
 ```
-Was this difficult?
 
 ### What are you waiting for?
+
+Assign and render template
 
 ``` php
 <?php
 
-    Tpl::assing('title', 'Hello!');
-    Tpl::render('test');
+Tpl::assing('title', 'Hello!');
+Tpl::render('test');
 ```
 
 [ico-version]: https://img.shields.io/github/release/BonfimSystems/View.svg?style=flat-square
