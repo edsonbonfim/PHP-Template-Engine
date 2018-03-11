@@ -17,6 +17,7 @@ BonfimTPL requires **PHP >= 7.1.0**
 
 * [Installation](#installation)
 * [Basic Usage](#basic-usage)
+* [BonfimTPL Tags](#bonfimtpl-tags)
 
 ## Installation
 
@@ -70,6 +71,29 @@ Assign and render template
 
 Tpl::assing('title', 'Hello!');
 Tpl::render('test');
+```
+
+## BonfimTPL Tags
+
+### {variable}
+
+Variables are the dynamic content of the template, valorized on the execution of the script with Tpl::assing() static method. Variables names are case sensitive.
+
+**Template:**
+``` html
+Welcome to {title}
+```
+
+**Data:**
+``` php
+<?php
+
+Tpl::assign('title', 'BonfimTPL');
+```
+
+**Output:**
+``` html
+Welcome to BonfimTPL
 ```
 
 [ico-version]: https://img.shields.io/github/release/BonfimSystems/View.svg?style=flat-square
