@@ -18,6 +18,11 @@ BonfimTPL requires **PHP >= 7.1.0**
 * [Installation](#installation)
 * [Basic Usage](#basic-usage)
 * [BonfimTPL Tags](#bonfimtpl-tags)
+    * [Variables](#variables)
+    * [Conditional Expression](#conditional-expression)
+    * [Loop](#loop)
+    * [Function](#function)
+    * [Include](#include)
 
 # Installation
 
