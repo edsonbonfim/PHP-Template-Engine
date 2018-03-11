@@ -18,19 +18,28 @@ BonfimTPL is an PHP template engine and provide a better way to produce dynamic 
 BonfimTPL requires **PHP >= 7.1.0**
 
 ## Installation
-### Installing via Composer **(recommended)**
 
-BonfimTPL is avaliable on [packagist.org](https://packagist.org/packages/bonfim/tpl) to do so, install [Composer](https://getcomposer.org/download/) and run the following command to get the last version:
+1. Install composer [https://getcomposer.org/download/](https://getcomposer.org/download/)
 
+2. Create a **composer.json** inside your application folder:
+``` json
+{
+    "require": {
+        "bonfim/tpl": ">=1.0.0"
+    }
+}
+```
+
+3. Open the command line and run the following:
 ``` sh
-$ composer require bonfim/tpl
+$ composer install
 ```
 
 ## Basic usage
 
 ### Setup
 
-Frist, you'll need an autoloader.
+Create an **index.php** file and require the autoload.php of Composer
 
 ``` php
 <?php
@@ -57,7 +66,8 @@ Was this difficult?
 ``` php
 <?php
 
-
+    Tpl::assing('title', 'Hello!');
+    Tpl::render('test');
 ```
 
 [ico-version]: https://img.shields.io/github/release/BonfimSystems/View.svg?style=flat-square
