@@ -126,10 +126,10 @@ Checks an expression and print the code between {if}{else} if the conditions is 
 
 **Template:**
 ``` html
-{if age &lt; 18}
-    Minor
-{else}
+{if age >= 18}
     Adult
+{else}
+    Minor
 {/if}
 ```
 
