@@ -9,17 +9,17 @@
 
 This is the full documentation for BonfimTPL 1.0.x
 
-## Prerequisites
+# Prerequisites
 
 BonfimTPL requires **PHP >= 7.1.0**
 
-## Table of Contents
+# Table of Contents
 
 * [Installation](#installation)
 * [Basic Usage](#basic-usage)
 * [BonfimTPL Tags](#bonfimtpl-tags)
 
-## Installation
+# Installation
 
 Install composer [https://getcomposer.org/download/](https://getcomposer.org/download/)
 
@@ -37,9 +37,9 @@ Open the command line and run the following:
 $ composer install
 ```
 
-## Basic usage
+# Basic usage
 
-### Setup
+## Setup
 
 Create an **index.php** file and require the autoload.php of Composer
 
@@ -62,7 +62,7 @@ Tpl::config([
 ]);
 ```
 
-### What are you waiting for?
+## What are you waiting for?
 
 Assign and render template
 
@@ -73,15 +73,11 @@ Tpl::assing('title', 'Hello!');
 Tpl::render('test');
 ```
 
-## BonfimTPL Tags
+# BonfimTPL Tags
 
-### {variable}
+## {variable}
 
 Variables are the dynamic content of the template, valorized on the execution of the script with Tpl::assing() static method. Variables names are case sensitive.
-
-**Example:**
-
-
 
 **Template:**
 ``` html
@@ -99,6 +95,8 @@ Tpl::assign('title', 'BonfimTPL');
 ``` html
 Welcome to BonfimTPL
 ```
+
+### {variable|modifier}
 
 You can add modifiers that are executed on the variables.
 
