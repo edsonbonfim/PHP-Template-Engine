@@ -26,8 +26,6 @@ BonfimTPL is avaliable on [packagist.org](https://packagist.org/packages/bonfim/
 $ composer require bonfim/tpl
 ```
 
-# BonfimTPL for developers
-
 ## Basic usage
 
 ### Setup
@@ -40,12 +38,27 @@ Frist, you'll need an autoloader.
     include 'vendor/autoload.php';
 ```
 
+After that, let's to do all necessary configuration
+
+``` php
+<?php
+
+    use Bonfim\Tpl;
+
+    Tpl::config([
+        'template_dir' => 'path/to/templates',
+        'cache_dir'    => 'path/to/caches'
+    ]);
+```
+Was this difficult?
+
+### What are you waiting for?
+
+``` php
+<?php
 
 
-
-
-
-
+```
 
 [ico-version]: https://img.shields.io/github/release/BonfimSystems/View.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/BonfimSystems/View/master.svg?style=flat-square
