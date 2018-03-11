@@ -39,7 +39,7 @@ $ composer install
 
 # Basic usage
 
-**Setup**
+###Setup
 
 Create an **index.php** file and require the autoload.php of Composer
 
@@ -62,7 +62,7 @@ Tpl::config([
 ]);
 ```
 
-**What are you waiting for?**
+###What are you waiting for?
 
 Assign and render template
 
@@ -75,9 +75,9 @@ Tpl::render('test');
 
 # BonfimTPL Tags
 
-* [{variable}](#{variable})
+* [Variables](#variables)
 
-## {variable}
+## Variables
 
 Variables are the dynamic content of the template, valorized on the execution of the script with Tpl::assing() static method. Variables names are case sensitive.
 
@@ -98,7 +98,7 @@ Tpl::assign('title', 'BonfimTPL');
 Welcome to BonfimTPL
 ```
 
-### {variable|modifier}
+### Modifiers on variables
 
 You can add modifiers that are executed on the variables.
 
