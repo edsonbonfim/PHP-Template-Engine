@@ -9,10 +9,6 @@
 
 This is the full documentation for BonfimTPL 1.0.x
 
-# Getting started
-
-BonfimTPL is an PHP template engine and provide a better way to produce dynamic web pages.
-
 ## Prerequisites
 
 BonfimTPL requires **PHP >= 7.1.0**
