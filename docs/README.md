@@ -75,9 +75,10 @@ Tpl::render('test');
 
 # BonfimTPL Tags
 
-* [Variables](#variables)
+* [{Variables}](#variables)
 * [Conditional Expression](#conditional-expression)
 * [Loop](#loop)
+* [Function](#function)
 
 ## Variables
 
@@ -157,6 +158,8 @@ Allow to loop through the value of arrays or objects.
 {/foreach}
 ```
 
+you can also use the {if condition}content{elseif condition}content{else}content{/if} or any combination of if and else.
+
 **Data:**
 ``` php
 <?php
@@ -180,6 +183,21 @@ Tpl::assign('authors', $authors);
 Edson Onildo: https://github.com/EdsonOnildoJR
 Contributors: https://github.com/EdsonOnildoJR/BonfimTPL/contributors
 ```
+
+## Function
+
+Use {func  funcname()} tag to execute a PHP function and print the result. You can pass strings, numbers and variables as parameters.
+
+**Template:**
+``` html
+{func date('Y')}
+```
+
+**Output:**
+``` html
+2018
+```
+
 
 
 [ico-version]: https://img.shields.io/github/release/BonfimSystems/View.svg?style=flat-square
