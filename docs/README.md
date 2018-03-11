@@ -96,6 +96,25 @@ Tpl::assign('title', 'BonfimTPL');
 Welcome to BonfimTPL
 ```
 
+You can add modifiers that are executed on the variables
+
+**Template:**
+``` html
+Hello {name | ucwords}!
+```
+
+**Data:**
+``` php
+<?php
+
+Tpl::assign('name', 'edson onildo');
+```
+
+**Output:**
+``` html
+Hello Edson Onildo!
+```
+
 [ico-version]: https://img.shields.io/github/release/BonfimSystems/View.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/BonfimSystems/View/master.svg?style=flat-square
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/BonfimSystems/View.svg?style=flat-square
