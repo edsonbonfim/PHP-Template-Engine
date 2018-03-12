@@ -257,4 +257,4 @@ The MIT License (MIT). Please see [License File](https://github.com/EdsonOnildoJ
 [link-styleci]: https://styleci.io/repos/124528765
 [link-downloads]: https://packagist.org/packages/bonfim/view
 [link-author]: https://github.com/EdsonOnildoJR
-[link-contributors]: https://github.com/EdsonOnildoJR/BonfimTPL/blob/master/contributors
+[link-contributors]: https://github.com/EdsonOnildoJR/BonfimTPL/contributors
