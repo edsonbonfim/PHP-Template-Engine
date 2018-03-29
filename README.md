@@ -16,7 +16,7 @@ $ composer require bonfim/tpl
 
 ## Documentation
 
-[Check out the documentation](https://github.com/EdsonOnildoJR/BonfimTPL/tree/master/docs).
+[Check out the documentation](https://edsononildojr.github.io/BonfimTPL).
 
 ## Contributing
 
