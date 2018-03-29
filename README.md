@@ -1,4 +1,4 @@
-# Bonfim View Component
+# BonfimTPL
 
 [![Latest Version][ico-version]][link-version]
 [![Build Status][ico-travis]][link-travis]
