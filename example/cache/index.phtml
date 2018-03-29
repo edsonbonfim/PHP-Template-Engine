@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title><?php echo($title); ?></title>
+    </head>
+    <body>
+        <header>
+            <h1><?php echo($title); ?></h1>
+        </header>
+
+        <main>
+            
+
+    <?php if($status === true): ?>True<?php else: ?>False<?php endif; ?>
+
+
+
+            <h1>Credits</h1>
+<ul>
+    <?php foreach($authors as $author): ?><li><a href="<?php echo($author['homepage']); ?>"><?php echo($author['name']); ?></a></li><?php endforeach; ?>
+</ul>
+
+        </main>
+
+        <footer>
+            &copy; <?php echo(date('Y')); ?> Bonfim Systems
+        </footer>
+    </body>
+</html>

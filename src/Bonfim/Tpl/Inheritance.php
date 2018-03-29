@@ -1,11 +1,10 @@
 <?php
 
-namespace Bonfim\Component\View;
+namespace Bonfim\Tpl;
 
-class Inheritance
+class Inheritance extends Content
 {
-    use ParseTpl;
-
+    private $config;
     private $blocks = [];
     private $content = '';
     private $patternBlock   = '/{\s?block \'?"?([\w]+)"?\'?\s?}(.*?){\s?\/block\s?}/is';
@@ -37,7 +36,7 @@ class Inheritance
     private function extends(): void
     {
         if (preg_match($this->patternExtends, $this->content, $match)) {
-            $this->content = $this->getContent($match[1]);
+            $this->content = $this->getContent($match[1], $this->config);
             $this->replace();
         }
     }

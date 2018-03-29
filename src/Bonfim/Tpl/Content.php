@@ -1,20 +1,12 @@
 <?php
 
-namespace Bonfim\Component\View;
+namespace Bonfim\Tpl;
 
-trait ParseTpl
+class Content
 {
-    protected $config;
-    protected $data = ['__version' => '1.0.0'];
-
-    public function config(array $config)
+    public function getContent(string $view, array $config): string
     {
-        $this->config = $config;
-    }
-
-    public function getContent($view): string
-    {
-        $file = getcwd() . '/' . $this->config['template_dir'] . "/$view.html";
+        $file = getcwd() . '/' . $config['template_dir'] . "/$view.html";
 
         if (!file_exists($file)) {
             throw new \Exception("$file template not found"); // @codeCoverageIgnore

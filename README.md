@@ -5,21 +5,18 @@
 [![Coverage Status][ico-scrutinizer]][link-scrutinizer]
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![StyleCI][ico-styleci]][link-styleci]
-[![Total Downloads][ico-downloads]][link-downloads]
 
 ## Install
 
 Via Composer
 
-``` bash
-$ composer require bonfim/view
+``` sh
+$ composer require bonfim/tpl
 ```
 
-## Testing
+## Documentation
 
-``` bash
-$ composer test
-```
+[Check out the documentation](https://github.com/EdsonOnildoJR/BonfimTPL/tree/master/docs).
 
 ## Contributing
 
@@ -27,7 +24,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) and [CODE_OF_CONDUCT](CODE_OF_CONDUCT
 
 ## Security
 
-If you discover any security related issues, please email edsononildo@bonfimsystems.com instead of using the issue tracker.
+If you discover any security related issues, please email inbox.edsononildo@gmail.com instead of using the issue tracker.
 
 ## Credits
 
@@ -38,18 +35,16 @@ If you discover any security related issues, please email edsononildo@bonfimsyst
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/github/release/BonfimSystems/View.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/BonfimSystems/View/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/BonfimSystems/View.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/BonfimSystems/View.svg?style=flat-square
+[ico-version]: https://img.shields.io/github/release/EdsonOnildoJR/BonfimTPL.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/EdsonOnildoJR/BonfimTPL/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/EdsonOnildoJR/BonfimTPL.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/EdsonOnildoJR/BonfimTPL.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/124528765/shield?branch=master
-[ico-downloads]: https://img.shields.io/packagist/dt/bonfim/view.svg?style=flat-square
 
-[link-version]:https://github.com/thephpleague/uri-parser/releases
-[link-travis]: https://travis-ci.org/BonfimSystems/View
-[link-scrutinizer]: https://scrutinizer-ci.com/g/BonfimSystems/View/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/BonfimSystems/View
+[link-version]:https://github.com/EdsonOnildoJR/BonfimTPL/releases
+[link-travis]: https://travis-ci.org/EdsonOnildoJR/BonfimTPL
+[link-scrutinizer]: https://scrutinizer-ci.com/g/EdsonOnildoJR/BonfimTPL/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/EdsonOnildoJR/BonfimTPL
 [link-styleci]: https://styleci.io/repos/124528765
-[link-downloads]: https://packagist.org/packages/bonfim/view
 [link-author]: https://github.com/EdsonOnildoJR
-[link-contributors]: ../../contributors
+[link-contributors]: https://github.com/EdsonOnildoJR/BonfimTPL/contributors

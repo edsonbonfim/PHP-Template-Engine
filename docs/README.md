@@ -5,7 +5,6 @@
 [![Coverage Status][ico-scrutinizer]][link-scrutinizer]
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![StyleCI][ico-styleci]][link-styleci]
-[![Total Downloads][ico-downloads]][link-downloads]
 
 This is the full documentation for BonfimTPL 1.0.x
 
@@ -255,6 +254,5 @@ The MIT License (MIT). Please see [License File](https://github.com/EdsonOnildoJ
 [link-scrutinizer]: https://scrutinizer-ci.com/g/EdsonOnildoJR/BonfimTPL/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/EdsonOnildoJR/BonfimTPL
 [link-styleci]: https://styleci.io/repos/124528765
-[link-downloads]: https://packagist.org/packages/bonfim/view
 [link-author]: https://github.com/EdsonOnildoJR
 [link-contributors]: https://github.com/EdsonOnildoJR/BonfimTPL/contributors

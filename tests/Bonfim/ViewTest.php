@@ -3,7 +3,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Bonfim\Component\View\View;
+use Bonfim\Tpl;
 
 class ViewTest extends TestCase
 {
@@ -13,13 +13,14 @@ class ViewTest extends TestCase
         fwrite($test, '{title}');
         fclose($test);
 
-        View::assign('title', 'Test View');
+        Tpl::assign('title', 'Test View');
 
-        View::config([
-            'template_dir' => 'tests/Bonfim'
+        Tpl::config([
+            'template_dir' => 'tests/Bonfim',
+            'cache_dir' => 'tests/cache'
         ]);
 
-        $this->assertEquals('Test View', View::render('test'));
+        $this->assertEquals('Test View', Tpl::render('test'));
 
         unlink('tests/Bonfim/test.html');
     }

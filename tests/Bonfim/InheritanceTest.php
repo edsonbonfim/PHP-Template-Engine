@@ -3,13 +3,16 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Bonfim\Component\View\Inheritance;
+use Bonfim\Tpl\Inheritance;
 
 class InheritanceTest extends TestCase
 {
     public function testBasicInheritance(): void
     {
-        $config = ['template_dir' => 'tests/Bonfim'];
+        $config = [
+            'template_dir' => 'tests/Bonfim',
+            'cache_dir' => 'tests/cache'
+        ];
 
         $expected = "Main layout\nChild block";
         $content  = '{extends \'test\'}';

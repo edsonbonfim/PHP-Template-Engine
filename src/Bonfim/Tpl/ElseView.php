@@ -1,6 +1,6 @@
 <?php
 
-namespace Bonfim\Component\View;
+namespace Bonfim\Tpl;
 
 trait ElseView
 {
