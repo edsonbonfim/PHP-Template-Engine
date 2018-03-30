@@ -6,6 +6,8 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![StyleCI][ico-styleci]][link-styleci]
 
+BonfimTPL is an PHP template engine and provide a better way to produce dynamic web pages.
+
 ## Install
 
 Via Composer
