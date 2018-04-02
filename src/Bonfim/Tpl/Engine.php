@@ -5,10 +5,13 @@ namespace Bonfim\Tpl;
 class Engine extends Content
 {
     private $config;
-    private $data = ['__version' => '1.1.0'];
+    private $data = [
+        '__version' => '1.1.0',
+    ];
 
     public function config(array $config): void
     {
+        $this->data['__session'] = (object) $_SESSION;
         $this->config = $config;
     }
 

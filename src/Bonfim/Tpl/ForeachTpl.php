@@ -34,6 +34,7 @@ class ForeachTpl
                 $this->setForeachContent();
 
                 $content  = "<?php foreach({$this->array} as {$this->callback}): ?>";
+                /*$content .= "<?php if (is_object({$this->callback})) {$this->callback} = (array) {$this->callback}; ?>";*/
                 $content .= $this->foreachContent;
                 $content .= "<?php endforeach; ?>";
 
@@ -54,7 +55,7 @@ class ForeachTpl
         $variableArray = '$'.$explode[0];
 
         for ($i = 1; $i < count($explode); $i++) {
-            $variableArray .= "['".$explode[$i]."']";
+            $variableArray .= "->".$explode[$i];
         }
 
         $this->array = $variableArray;

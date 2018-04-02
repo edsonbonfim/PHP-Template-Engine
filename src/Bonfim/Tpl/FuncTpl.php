@@ -28,7 +28,7 @@ class FuncTpl
                 $this->match = $matches[$i];
                 $this->setFuncName();
                 $this->setFuncArgs();
-                $content = '<?php echo('.$this->funcName.'('.$this->funcArgs.')); ?>';
+                $content = '<?php '.$this->funcName.'('.$this->funcArgs.'); ?>';
                 $this->content = str_replace($matches[$i][0], $content, $this->content);
             };
         }

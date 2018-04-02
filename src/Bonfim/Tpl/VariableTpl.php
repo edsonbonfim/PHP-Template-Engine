@@ -6,7 +6,7 @@ use Exception;
 
 class VariableTpl
 {
-    private $pattern = '/{\s?([\w]+.?[\w]+)\s?\|?\s?([\w]+)?\s?}/is';
+    private $pattern = '/{\s?([\w]+.?[\w]+.?[\w]+)\s?\|?\s?([\w]+)?\s?}/is';
     private $match   = [];
     private $matches = [];
     private $replace = '';
@@ -29,6 +29,7 @@ class VariableTpl
             for ($i = 0; $i < count($this->matches); $i++) {
                 $this->match = $this->matches[$i];
                 $this->getVariable();
+                /*$this->replace = "<?php if (is_object({$this->variable})) {$this->variable} = (array) {$this->variable}; ?>";*/
                 $this->replace = '<?php echo('.$this->variable.'); ?>';
                 $this->filter('upper');
                 $this->content = str_replace($this->match[0], $this->replace, $this->content);
@@ -45,7 +46,7 @@ class VariableTpl
         $variable = '$'.$variable;
 
         for ($k = 1; $k < count($explode); $k++) {
-            $variable .= "['".$explode[$k]."']";
+            $variable .= "->".$explode[$k];
         }
 
         $this->variable = $variable;
@@ -58,8 +59,8 @@ class VariableTpl
 
     private function upper(): void
     {
-        if (isset($this->match[2]) && $this->match[2] == 'upper') {
-            $this->replace = '<?php echo(ucwords('.$this->variable.')); ?>';
+        if (isset($this->match[2]) && $this->match[2] == 'capitalize') {
+            $this->replace = '<?php echo(ucwords(strtolower('.$this->variable.'))); ?>';
         }
     }
 }

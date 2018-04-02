@@ -45,9 +45,10 @@ class IfTpl
                 $this->else();
                 $this->endif();
 
+                $this->elseif = [];
+
                 $this->content = str_replace($this->block, $this->replace, $this->content);
             }
-            $this->if();
         }
     }
 
@@ -79,7 +80,7 @@ class IfTpl
             $condition = '$'.$explode[0];
 
             for ($i = 1; $i < count($explode); $i++) {
-                $condition .= "['".$explode[$i]."']";
+                $condition .= "->".$explode[$i];
             }
         }
 
