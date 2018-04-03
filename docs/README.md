@@ -1,4 +1,4 @@
-# BonfimTPL 1.0 Documentation
+# Sketch 1.0 Documentation
 
 [![Latest Version][ico-version]][link-version]
 [![Build Status][ico-travis]][link-travis]
@@ -6,17 +6,17 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![StyleCI][ico-styleci]][link-styleci]
 
-This is the full documentation for BonfimTPL 1.0.x
+This is the full documentation for Sketch 1.0.x
 
 # Prerequisites
 
-BonfimTPL requires **PHP >= 7.1.0**
+Sketch requires **PHP >= 7.1.0**
 
 # Table of Contents
 
 * [Installation](#installation)
 * [Basic Usage](#basic-usage)
-* [BonfimTPL Tags](#bonfimtpl-tags)
+* [Sketch Tags](#bonfimtpl-tags)
     * [Variables](#variables)
     * [Conditional Expression](#conditional-expression)
     * [Loop](#loop)
@@ -81,7 +81,7 @@ Tpl::assing('title', 'Hello!');
 Tpl::render('test');
 ```
 
-# BonfimTPL Tags
+# Sketch Tags
 
 * [Variables](#variables)
 * [Conditional Expression](#conditional-expression)
@@ -102,12 +102,12 @@ Welcome to {title}
 ``` php
 <?php
 
-Tpl::assign('title', 'BonfimTPL');
+Tpl::assign('title', 'Sketch');
 ```
 
 **Output:**
 ``` html
-Welcome to BonfimTPL
+Welcome to Sketch
 ```
 
 ### Modifiers on variables
@@ -180,7 +180,7 @@ $authors = [
     ],
     [
         'name'     => 'Contributors',
-        'homepage' => 'https://github.com/EdsonOnildoJR/BonfimTPL/contributors'
+        'homepage' => 'https://github.com/EdsonOnildoJR/Sketch/contributors'
     ]
 ];
 
@@ -190,7 +190,7 @@ Tpl::assign('authors', $authors);
 **Output:**
 ``` html
 Edson Onildo: https://github.com/EdsonOnildoJR
-Contributors: https://github.com/EdsonOnildoJR/BonfimTPL/contributors
+Contributors: https://github.com/EdsonOnildoJR/Sketch/contributors
 ```
 
 ## Function
@@ -227,7 +227,7 @@ With **{include 'template'}** tag you can include external template as blocks.
 
 ## Contributing
 
-Please see [CONTRIBUTING](https://github.com/EdsonOnildoJR/BonfimTPL/blob/master/CONTRIBUTING.md) and [CODE_OF_CONDUCT](https://github.com/EdsonOnildoJR/BonfimTPL/blob/master/CODE_OF_CONDUCT.md) for details.
+Please see [CONTRIBUTING](https://github.com/EdsonOnildoJR/Sketch/blob/master/CONTRIBUTING.md) and [CODE_OF_CONDUCT](https://github.com/EdsonOnildoJR/Sketch/blob/master/CODE_OF_CONDUCT.md) for details.
 
 ## Security
 
@@ -240,19 +240,19 @@ If you discover any security related issues, please email inbox.edsononildo@gmai
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/EdsonOnildoJR/BonfimTPL/blob/master/LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/EdsonOnildoJR/Sketch/blob/master/LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/github/release/EdsonOnildoJR/BonfimTPL.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/EdsonOnildoJR/BonfimTPL/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/EdsonOnildoJR/BonfimTPL.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/EdsonOnildoJR/BonfimTPL.svg?style=flat-square
+[ico-version]: https://img.shields.io/github/release/EdsonOnildoJR/Sketch.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/EdsonOnildoJR/Sketch/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/EdsonOnildoJR/Sketch.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/EdsonOnildoJR/Sketch.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/124528765/shield?branch=master
 [ico-downloads]: https://img.shields.io/packagist/dt/bonfim/view.svg?style=flat-square
 
-[link-version]:https://github.com/EdsonOnildoJR/BonfimTPL/releases
-[link-travis]: https://travis-ci.org/EdsonOnildoJR/BonfimTPL
-[link-scrutinizer]: https://scrutinizer-ci.com/g/EdsonOnildoJR/BonfimTPL/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/EdsonOnildoJR/BonfimTPL
+[link-version]:https://github.com/EdsonOnildoJR/Sketch/releases
+[link-travis]: https://travis-ci.org/EdsonOnildoJR/Sketch
+[link-scrutinizer]: https://scrutinizer-ci.com/g/EdsonOnildoJR/Sketch/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/EdsonOnildoJR/Sketch
 [link-styleci]: https://styleci.io/repos/124528765
 [link-author]: https://github.com/EdsonOnildoJR
-[link-contributors]: https://github.com/EdsonOnildoJR/BonfimTPL/contributors
+[link-contributors]: https://github.com/EdsonOnildoJR/Sketch/contributors

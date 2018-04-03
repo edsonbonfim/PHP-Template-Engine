@@ -1,16 +1,8 @@
 {
-    "name": "bonfim/tpl",
+    "name": "edsononildo/sketch",
     "type": "library",
-    "description": "BonfimTPL is an PHP template engine and provide a better way to produce dynamic web pages.",
-    "keywords": [
-        "BonfimTPL",
-        "view",
-        "template",
-        "tpl",
-        "PHP",
-        "template engine"
-    ],
-    "homepage": "https://github.com/EdsonOnildoJR/BonfimTPL",
+    "description": "Sketch is an PHP template engine and provide a better way to produce dynamic web pages.",
+    "homepage": "https://github.com/EdsonOnildoJR/Sketch",
     "license": "MIT",
     "authors": [
         {
@@ -29,12 +21,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Bonfim\\": "src/Bonfim/"
+            "Bonfim\\": "src/Sketch/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/Bonfim/"
+            "Tests\\": "tests/Sketch/"
         }
     },
     "scripts": {
@@ -45,7 +37,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0-dev"
+            "dev-master": "1.1-dev"
         }
     },
     "config": {

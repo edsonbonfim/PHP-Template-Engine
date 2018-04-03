@@ -1,4 +1,4 @@
-# BonfimTPL
+# Sketch
 
 [![Latest Version][ico-version]][link-version]
 [![Build Status][ico-travis]][link-travis]
@@ -6,17 +6,18 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![StyleCI][ico-styleci]][link-styleci]
 
-BonfimTPL is an PHP template engine and provide a better way to produce dynamic web pages.
+Sketch is an PHP template engine and provide a better way to produce dynamic web pages.
 
 ## Install
 
 Via Composer
 
 ``` sh
-$ composer require bonfim/tpl
+$ composer require edsononildo/sketch
 ```
 
 ## Documentation
+
 
 [Check out the documentation](https://edsononildojr.github.io/BonfimTPL).
 
@@ -37,16 +38,16 @@ If you discover any security related issues, please email inbox.edsononildo@gmai
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/github/release/EdsonOnildoJR/BonfimTPL.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/EdsonOnildoJR/BonfimTPL/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/EdsonOnildoJR/BonfimTPL.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/EdsonOnildoJR/BonfimTPL.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/124528765/shield?branch=master
+[ico-version]: https://img.shields.io/github/release/EdsonOnildoJR/Sketch.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/EdsonOnildoJR/Sketch/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/EdsonOnildoJR/Sketch.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/EdsonOnildoJR/Sketch.svg?style=flat-square
+[ico-styleci]: https://styleci.io/repos/{styleci}/shield?branch=master
 
-[link-version]:https://github.com/EdsonOnildoJR/BonfimTPL/releases
-[link-travis]: https://travis-ci.org/EdsonOnildoJR/BonfimTPL
-[link-scrutinizer]: https://scrutinizer-ci.com/g/EdsonOnildoJR/BonfimTPL/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/EdsonOnildoJR/BonfimTPL
+[link-version]:https://github.com/EdsonOnildoJR/Sketch/releases
+[link-travis]: https://travis-ci.org/EdsonOnildoJR/Sketch
+[link-scrutinizer]: https://scrutinizer-ci.com/g/EdsonOnildoJR/Sketch/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/EdsonOnildoJR/Sketch
 [link-styleci]: https://styleci.io/repos/124528765
 [link-author]: https://github.com/EdsonOnildoJR
-[link-contributors]: https://github.com/EdsonOnildoJR/BonfimTPL/contributors
+[link-contributors]: https://github.com/EdsonOnildoJR/Sketch/contributors
