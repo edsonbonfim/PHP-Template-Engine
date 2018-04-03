@@ -19,7 +19,7 @@ $ composer require edsononildo/sketch
 ## Documentation
 
 
-[Check out the documentation](https://edsononildojr.github.io/BonfimTPL).
+[Check out the documentation](https://edsononildojr.github.io/Sketch).
 
 ## Contributing
 
