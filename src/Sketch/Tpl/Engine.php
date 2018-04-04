@@ -11,7 +11,9 @@ class Engine extends Content
 
     public function config(array $config): void
     {
-        $this->data['__session'] = (object) $_SESSION;
+        if (isset($_SESSION)) {
+            $this->data['__session'] = (object) $_SESSION;
+        }
         $this->config = $config;
     }
 

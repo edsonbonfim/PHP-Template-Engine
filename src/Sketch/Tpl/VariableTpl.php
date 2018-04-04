@@ -29,7 +29,6 @@ class VariableTpl
             for ($i = 0; $i < count($this->matches); $i++) {
                 $this->match = $this->matches[$i];
                 $this->getVariable();
-                /*$this->replace = "<?php if (is_object({$this->variable})) {$this->variable} = (array) {$this->variable}; ?>";*/
                 $this->replace = '<?php echo('.$this->variable.'); ?>';
                 $this->filter('upper');
                 $this->content = str_replace($this->match[0], $this->replace, $this->content);

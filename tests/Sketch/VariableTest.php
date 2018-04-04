@@ -9,7 +9,7 @@ class VariableTest extends TestCase
 {
     public function testBasicVariable()
     {
-        $expected = '<?php echo($author[\'name\']); ?>';
+        $expected = '<?php echo($author->name); ?>';
         $content  = '{author.name}';
 
         $this->assertEquals($expected, (string) new VariableTpl($content));
@@ -17,8 +17,8 @@ class VariableTest extends TestCase
 
     public function testFilterUpper()
     {
-        $expected = '<?php echo(ucwords($name)); ?>';
-        $content  = '{name | upper}';
+        $expected = '<?php echo(ucwords(strtolower($name))); ?>';
+        $content  = '{name | capitalize}';
 
         $this->assertEquals($expected, (string) new VariableTpl($content));
     }

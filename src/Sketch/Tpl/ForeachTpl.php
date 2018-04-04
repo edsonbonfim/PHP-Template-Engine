@@ -34,7 +34,6 @@ class ForeachTpl
                 $this->setForeachContent();
 
                 $content  = "<?php foreach({$this->array} as {$this->callback}): ?>";
-                /*$content .= "<?php if (is_object({$this->callback})) {$this->callback} = (array) {$this->callback}; ?>";*/
                 $content .= $this->foreachContent;
                 $content .= "<?php endforeach; ?>";
 

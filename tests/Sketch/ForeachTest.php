@@ -9,7 +9,7 @@ class ForeachTest extends TestCase
 {
     public function testBasicForeach(): void
     {
-        $expected  = '<?php foreach($users[\'admin\'] as $admin): ?>';
+        $expected  = '<?php foreach($users->admin as $admin): ?>';
         $expected .= '<p>{admin.name}</p>';
         $expected .= '<?php endforeach; ?>';
 

@@ -116,7 +116,7 @@ You can add modifiers that are executed on the variables.
 
 **Template:**
 ``` html
-Hello {name|ucwords}!
+Hello {name|capitalize}!
 ```
 
 **Data:**
