@@ -35,7 +35,7 @@ Create a **composer.json** inside your application folder:
 ``` json
 {
     "require": {
-        "sketch/sketch": ">=1.0.0"
+        "sketch/sketch": ">=2.0.0"
     }
 }
 ```
