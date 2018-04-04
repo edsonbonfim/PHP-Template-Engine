@@ -42,7 +42,7 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-travis]: https://img.shields.io/travis/EdsonOnildoJR/Sketch/master.svg?style=flat-square
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/EdsonOnildoJR/Sketch.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/EdsonOnildoJR/Sketch.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/{styleci}/shield?branch=master
+[ico-styleci]: https://styleci.io/repos/124528765/shield?branch=master
 
 [link-version]:https://github.com/EdsonOnildoJR/Sketch/releases
 [link-travis]: https://travis-ci.org/EdsonOnildoJR/Sketch
