@@ -6,7 +6,7 @@ class Engine extends Content
 {
     private $config;
     private $data = [
-        '__version' => '1.1.0',
+        '__version' => '2.0.0',
     ];
 
     public function config(array $config): void
