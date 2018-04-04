@@ -6,7 +6,7 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![StyleCI][ico-styleci]][link-styleci]
 
-This is the full documentation for Sketch 1.0.x
+This is the full documentation for Sketch 2.0.x
 
 # Prerequisites
 
