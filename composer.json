@@ -1,5 +1,5 @@
 {
-    "name": "sketch/sketch",
+    "name": "sketchphp/sketch",
     "type": "library",
     "description": "Sketch is an PHP template engine and provide a better way to produce dynamic web pages.",
     "homepage": "https://github.com/EdsonOnildoJR/Sketch",
