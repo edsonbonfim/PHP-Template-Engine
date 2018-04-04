@@ -1,4 +1,4 @@
-# Sketch 1.0 Documentation
+# Sketch 2.0 Documentation
 
 [![Latest Version][ico-version]][link-version]
 [![Build Status][ico-travis]][link-travis]
