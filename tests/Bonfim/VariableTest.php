@@ -3,7 +3,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Bonfim\Tpl\VariableTpl;
+use Sketch\Tpl\VariableTpl;
 
 class VariableTest extends TestCase
 {

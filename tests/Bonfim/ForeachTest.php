@@ -3,7 +3,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Bonfim\Tpl\ForeachTpl;
+use Sketch\Tpl\ForeachTpl;
 
 class ForeachTest extends TestCase
 {

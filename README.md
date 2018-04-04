@@ -13,7 +13,7 @@ Sketch is an PHP template engine and provide a better way to produce dynamic web
 Via Composer
 
 ``` sh
-$ composer require edsononildo/sketch
+$ composer require sketchsketch
 ```
 
 ## Documentation

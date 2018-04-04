@@ -1,5 +1,5 @@
 {
-    "name": "edsononildo/sketch",
+    "name": "sketchsketch",
     "type": "library",
     "description": "Sketch is an PHP template engine and provide a better way to produce dynamic web pages.",
     "homepage": "https://github.com/EdsonOnildoJR/Sketch",
@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Bonfim\\": "src/Sketch/"
+            "Sketch\\": "src/Sketch/"
         }
     },
     "autoload-dev": {

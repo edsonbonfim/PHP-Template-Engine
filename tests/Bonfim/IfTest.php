@@ -3,7 +3,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Bonfim\Tpl\IfTpl;
+use Sketch\Tpl\IfTpl;
 
 class IfTest extends TestCase
 {

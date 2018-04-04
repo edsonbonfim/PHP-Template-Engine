@@ -35,7 +35,7 @@ Create a **composer.json** inside your application folder:
 ``` json
 {
     "require": {
-        "bonfim/tpl": ">=1.0.0"
+        "sketch/sketch": ">=1.0.0"
     }
 }
 ```
@@ -62,7 +62,7 @@ After that, let's to do all necessary configuration
 ``` php
 <?php
 
-use Bonfim\Tpl;
+use Sketch\Tpl;
 
 Tpl::config([
     'template_dir' => 'path/to/templates',

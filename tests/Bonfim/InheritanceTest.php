@@ -3,7 +3,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Bonfim\Tpl\Inheritance;
+use Sketch\Tpl\Inheritance;
 
 class InheritanceTest extends TestCase
 {

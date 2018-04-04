@@ -3,7 +3,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Bonfim\Tpl\FuncTpl;
+use Sketch\Tpl\FuncTpl;
 
 class FuncTest extends TestCase
 {

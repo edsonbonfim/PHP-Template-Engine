@@ -2,7 +2,7 @@
 
 include '../vendor/autoload.php';
 
-use Bonfim\Tpl;
+use Sketch\Tpl;
 
 Tpl::config([
     'template_dir' => 'view',

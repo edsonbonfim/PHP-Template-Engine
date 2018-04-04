@@ -2,7 +2,7 @@
 
 namespace Bonfim;
 
-use Bonfim\Tpl\Engine;
+use Sketch\Tpl\Engine;
 
 class Tpl
 {

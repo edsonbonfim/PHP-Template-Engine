@@ -3,7 +3,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Bonfim\Tpl\IncludeTpl;
+use Sketch\Tpl\IncludeTpl;
 
 class IncludeTest extends TestCase
 {

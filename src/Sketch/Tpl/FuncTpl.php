@@ -1,6 +1,6 @@
 <?php
 
-namespace Bonfim\Tpl;
+namespace Sketch\Tpl;
 
 class FuncTpl
 {

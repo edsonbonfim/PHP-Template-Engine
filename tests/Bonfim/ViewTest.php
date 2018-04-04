@@ -3,7 +3,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Bonfim\Tpl;
+use Sketch\Tpl;
 
 class ViewTest extends TestCase
 {
