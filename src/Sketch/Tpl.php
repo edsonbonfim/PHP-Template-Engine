@@ -1,6 +1,6 @@
 <?php
 
-namespace Bonfim;
+namespace Sketch;
 
 use Sketch\Tpl\Engine;
 

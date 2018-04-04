@@ -10,7 +10,7 @@ Tpl::config([
 ]);
 
 Tpl::assign('status', true);
-Tpl::assign('title', 'BonfimTPL');
+Tpl::assign('title', 'Sketch');
 Tpl::assign('authors', [
     [
         "name"     => "Edson Onildo",
@@ -18,7 +18,7 @@ Tpl::assign('authors', [
     ],
     [
         "name"     => "All Contributors",
-        "homepage" => "https://github.com/EdsonOnildoJR/BonfimTPL/contributors",
+        "homepage" => "https://github.com/EdsonOnildoJR/Sketch/contributors",
     ]
 ]);
 

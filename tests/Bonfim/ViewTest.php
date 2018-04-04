@@ -9,19 +9,19 @@ class ViewTest extends TestCase
 {
     public function testView()
     {
-        $test = fopen('tests/Bonfim/test.html', 'w+');
+        $test = fopen('tests/Sketch/test.html', 'w+');
         fwrite($test, '{title}');
         fclose($test);
 
         Tpl::assign('title', 'Test View');
 
         Tpl::config([
-            'template_dir' => 'tests/Bonfim',
+            'template_dir' => 'tests/Sketch',
             'cache_dir' => 'tests/cache'
         ]);
 
         $this->assertEquals('Test View', Tpl::render('test'));
 
-        unlink('tests/Bonfim/test.html');
+        unlink('tests/Sketch/test.html');
     }
 }

@@ -16,7 +16,7 @@ Sketch requires **PHP >= 7.1.0**
 
 * [Installation](#installation)
 * [Basic Usage](#basic-usage)
-* [Sketch Tags](#bonfimtpl-tags)
+* [Sketch Tags](#sketch-tags)
     * [Variables](#variables)
     * [Conditional Expression](#conditional-expression)
     * [Loop](#loop)
@@ -247,7 +247,7 @@ The MIT License (MIT). Please see [License File](https://github.com/EdsonOnildoJ
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/EdsonOnildoJR/Sketch.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/EdsonOnildoJR/Sketch.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/124528765/shield?branch=master
-[ico-downloads]: https://img.shields.io/packagist/dt/bonfim/view.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/sketch/view.svg?style=flat-square
 
 [link-version]:https://github.com/EdsonOnildoJR/Sketch/releases
 [link-travis]: https://travis-ci.org/EdsonOnildoJR/Sketch

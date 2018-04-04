@@ -10,7 +10,7 @@ class InheritanceTest extends TestCase
     public function testBasicInheritance(): void
     {
         $config = [
-            'template_dir' => 'tests/Bonfim',
+            'template_dir' => 'tests/Sketch',
             'cache_dir' => 'tests/cache'
         ];
 
@@ -20,12 +20,12 @@ class InheritanceTest extends TestCase
         $content .= 'Child block';
         $content .= '{/block}';
 
-        $test = fopen('tests/Bonfim/test.html', 'w+');
+        $test = fopen('tests/Sketch/test.html', 'w+');
         fwrite($test, "Main layout\n{block 'content'}{/block}");
         fclose($test);
 
         $this->assertEquals($expected, (string) new Inheritance($content, $config));
 
-        unlink('tests/Bonfim/test.html');
+        unlink('tests/Sketch/test.html');
     }
 }

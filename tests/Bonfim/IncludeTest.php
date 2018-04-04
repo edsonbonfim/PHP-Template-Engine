@@ -10,17 +10,17 @@ class IncludeTest extends TestCase
     public function testBasicInclude()
     {
         $config = [
-            'template_dir' => 'tests/Bonfim',
+            'template_dir' => 'tests/Sketch',
             'cache_dir' => 'tests/cache'
 
         ];
 
-        $test = fopen('tests/Bonfim/test.html', 'w+');
+        $test = fopen('tests/Sketch/test.html', 'w+');
         fwrite($test, 'Test included');
         fclose($test);
 
         $this->assertEquals('Test included', (string) new IncludeTpl('{include \'test\'}', $config));
 
-        unlink('tests/Bonfim/test.html');
+        unlink('tests/Sketch/test.html');
     }
 }
