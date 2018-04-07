@@ -65,8 +65,10 @@ After that, let's to do all necessary configuration
 use Sketch\Tpl;
 
 Tpl::config([
-    'template_dir' => 'path/to/templates',
-    'cache_dir'    => 'path/to/caches'
+    //'environment' => 'production',
+    'environment'   => 'development',
+    'template_dir'  => 'path/to/templates',
+    'cache_dir'     => 'path/to/caches'
 ]);
 ```
 

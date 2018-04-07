@@ -4,15 +4,36 @@ namespace Sketch\Tpl;
 
 class File
 {
-    private $name;
+    private $fname;
     private $file;
 
-    public function create(string $name)
+    public function __construct(string $fname = null)
     {
-        $this->name = $name;
-        $this->file = fopen($name, 'w+');
+        $this->fname = $fname;
+    }
 
-        return $this->file;
+    /**
+     * @return bool
+     */
+    public function exists(): bool
+    {
+        if (file_exists($this->fname))
+            return true;
+
+        return false;
+    }
+
+    /**
+     * @return bool|resource
+     */
+    public function open()
+    {
+        return $this->file = fopen($this->fname, 'r');
+    }
+
+    public function create()
+    {
+        return $this->file = fopen($this->fname, 'w+');
     }
 
     public function write(string $content): void
@@ -27,7 +48,7 @@ class File
 
         ob_start();
 
-        include $this->name;
+        include $this->fname;
 
         return ob_get_clean();
     }
