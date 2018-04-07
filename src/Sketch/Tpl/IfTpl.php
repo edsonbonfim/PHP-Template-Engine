@@ -49,6 +49,7 @@ class IfTpl
 
                 $this->content = str_replace($this->block, $this->replace, $this->content);
             }
+            $this->content = new IfTpl($this->content);
         }
     }
 

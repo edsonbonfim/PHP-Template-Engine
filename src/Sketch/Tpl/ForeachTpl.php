@@ -39,6 +39,7 @@ class ForeachTpl
 
                 $this->content = str_replace($this->block, $content, $this->content);
             };
+            $this->content = ForeachTpl($this->content);
         }
     }
 
