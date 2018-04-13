@@ -10,6 +10,7 @@ class IncludeTest extends TestCase
     public function testBasicInclude()
     {
         $config = [
+            'environment' => 'development',
             'template_dir' => 'tests/Sketch',
             'cache_dir' => 'tests/cache'
 

@@ -16,6 +16,7 @@ class ViewTest extends TestCase
         Tpl::assign('title', 'Test View');
 
         Tpl::config([
+            'environment' => 'development',
             'template_dir' => 'tests/Sketch',
             'cache_dir' => 'tests/cache'
         ]);

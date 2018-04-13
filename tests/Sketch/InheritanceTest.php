@@ -10,6 +10,7 @@ class InheritanceTest extends TestCase
     public function testBasicInheritance(): void
     {
         $config = [
+            'environment' => 'development',
             'template_dir' => 'tests/Sketch',
             'cache_dir' => 'tests/cache'
         ];
