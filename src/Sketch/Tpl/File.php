@@ -17,8 +17,9 @@ class File
      */
     public function exists(): bool
     {
-        if (file_exists($this->fname))
+        if (file_exists($this->fname)) {
             return true;
+        }
 
         return false;
     }
