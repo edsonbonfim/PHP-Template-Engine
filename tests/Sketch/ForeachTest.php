@@ -3,7 +3,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Sketch\Tpl\ForeachTpl;
+use Sketch\Tpl\ForeachTag;
 
 class ForeachTest extends TestCase
 {
@@ -17,6 +17,6 @@ class ForeachTest extends TestCase
         $content .= '<p>{admin.name}</p>';
         $content .= '{/foreach}';
 
-        $this->assertEquals($expected, (string) new ForeachTpl($content));
+        $this->assertEquals($expected, (string)new ForeachTag($content));
     }
 }

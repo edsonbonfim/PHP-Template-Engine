@@ -2,9 +2,8 @@
 
 namespace Sketch\Tpl;
 
-use Exception;
 
-class VariableTpl
+class VariableTag extends Tag
 {
     private $pattern = '/{\s?([\w]+.?[\w]+.?[\w]+)\s?\|?\s?([\w]+)?\s?}/is';
     private $match   = [];
@@ -12,26 +11,15 @@ class VariableTpl
     private $replace = '';
     private $variable = '';
 
-    public function __construct(string $content)
+    public function handle(): void
     {
-        $this->content = $content;
-        $this->variable();
-    }
-
-    public function __toString(): string
-    {
-        return $this->content;
-    }
-
-    private function variable(): void
-    {
-        if (preg_match_all($this->pattern, $this->content, $this->matches, PREG_SET_ORDER)) {
+        if (preg_match_all($this->pattern, self::$content, $this->matches, PREG_SET_ORDER)) {
             for ($i = 0; $i < count($this->matches); $i++) {
                 $this->match = $this->matches[$i];
                 $this->getVariable();
                 $this->replace = '<?php echo('.$this->variable.'); ?>';
                 $this->filter('upper');
-                $this->content = str_replace($this->match[0], $this->replace, $this->content);
+                self::$content = str_replace($this->match[0], $this->replace, self::$content);
             };
         }
     }

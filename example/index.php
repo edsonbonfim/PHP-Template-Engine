@@ -8,7 +8,7 @@ Tpl::config([
     //'environment'  => 'production',
     'environment' => 'development',
     'template_dir' => 'view',
-    'cache_dir' => 'cache',
+    'cache_dir' => 'cache'
 ]);
 
 Tpl::assign('status', true);

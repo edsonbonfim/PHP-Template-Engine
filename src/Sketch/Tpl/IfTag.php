@@ -2,7 +2,7 @@
 
 namespace Sketch\Tpl;
 
-class IfTpl
+class IfTag extends Tag
 {
     use ElseView;
     use ElseifView;
@@ -13,24 +13,12 @@ class IfTpl
     private $secondCondition = '';
     private $operator = '';
     private $ifContent = '';
-    private $content;
     private $replace;
     private $match;
 
-    public function __construct(string $content)
+    public function handle(): void
     {
-        $this->content = $content;
-        $this->handle();
-    }
-
-    public function __toString(): string
-    {
-        return $this->content;
-    }
-
-    private function handle() : void
-    {
-        if (preg_match_all($this->pattern, $this->content, $matches, PREG_SET_ORDER)) {
+        if (preg_match_all($this->pattern, self::$content, $matches, PREG_SET_ORDER)) {
             for ($i = 0; $i < count($matches); $i++) {
                 $this->match = $matches[$i];
 
@@ -47,9 +35,9 @@ class IfTpl
 
                 $this->elseif = [];
 
-                $this->content = str_replace($this->block, $this->replace, $this->content);
+                self::$content = str_replace($this->block, $this->replace, self::$content);
             }
-            $this->content = new IfTpl($this->content);
+            new IfTag();
         }
     }
 

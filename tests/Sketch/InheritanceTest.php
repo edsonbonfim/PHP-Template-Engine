@@ -3,7 +3,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Sketch\Tpl\Inheritance;
+use Sketch\Tpl\InheritanceTag;
 
 class InheritanceTest extends TestCase
 {
@@ -25,7 +25,7 @@ class InheritanceTest extends TestCase
         fwrite($test, "Main layout\n{block 'content'}{/block}");
         fclose($test);
 
-        $this->assertEquals($expected, (string) new Inheritance($content, $config));
+        $this->assertEquals($expected, (string)new InheritanceTag($content, $config));
 
         unlink('tests/Sketch/test.html');
     }

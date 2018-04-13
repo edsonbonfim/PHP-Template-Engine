@@ -2,30 +2,18 @@
 
 namespace Sketch\Tpl;
 
-class ForeachTpl
+class ForeachTag extends Tag
 {
     private $pattern = '/{\s?foreach (.*?) as ([\w]+)\s?}(.*?){\s?\/foreach\s?}/is';
-    private $content;
     private $block = '';
     private $array = '';
     private $callback = '';
     private $foreachContent = '';
     private $match;
 
-    public function __construct(string $content)
+    public function handle(): void
     {
-        $this->content = $content;
-        $this->foreach();
-    }
-
-    public function __toString(): string
-    {
-        return $this->content;
-    }
-
-    private function foreach() : void
-    {
-        if (preg_match_all($this->pattern, $this->content, $matches, PREG_SET_ORDER)) {
+        if (preg_match_all($this->pattern, self::$content, $matches, PREG_SET_ORDER)) {
             for ($i = 0; $i < count($matches); $i++) {
                 $this->match = $matches[$i];
                 $this->setForeachBlock();
@@ -37,9 +25,9 @@ class ForeachTpl
                 $content .= $this->foreachContent;
                 $content .= "<?php endforeach; ?>";
 
-                $this->content = str_replace($this->block, $content, $this->content);
+                self::$content = str_replace($this->block, $content, self::$content);
             };
-            $this->content = new ForeachTpl($this->content);
+            new ForeachTag();
         }
     }
 

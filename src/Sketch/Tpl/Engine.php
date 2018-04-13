@@ -4,20 +4,29 @@ namespace Sketch\Tpl;
 
 use Exception;
 
-class Engine extends Content
+class Engine
 {
-    private $config;
     private $data = [];
-
-    private $file;
-    private $content;
 
     /**
      * @param array $config
+     * @throws Exception
      */
-    public function config(array $config): void
+    public function config($config): void
     {
-        $this->config = $config;
+        $expected = ['environment', 'template_dir', 'cache_dir'];
+
+        foreach ($expected as $exp) {
+            if (count($config) == 3) {
+                if (!array_key_exists($exp, $config)) {
+                    throw new Exception("The $exp configuration is expected");
+                }
+            } else {
+                throw new Exception("The configuration expected only tree arguments");
+            }
+        }
+
+        Tag::setConfig($config);
     }
 
     /**
@@ -28,20 +37,20 @@ class Engine extends Content
     public function render(string $view, array $data = []): string
     {
         try {
-            $content = $this->handle($this->getContent($view, $this->config));
+            $content = $this->handle(Content::getContent($view, Tag::getConfig()));
         } catch (Exception $e) {
-            die($e->getMessage());
+            return $e->getMessage();
         }
 
         $this->data = array_merge($this->data, $data);
 
-        $fname = getcwd() . '/' . $this->config['cache_dir'] . '/' . $view . '.phtml';
+        $fname = getcwd() . '/' . Tag::getConfig()['cache_dir'] . '/' . $view . '.phtml';
 
         $file = new File($fname);
 
-        if ($this->config['environment'] == 'production') {
+        if (Tag::getConfig()['environment'] == 'production') {
             $file->open();
-        } elseif ($this->config['environment'] == 'development') {
+        } elseif (Tag::getConfig()['environment'] == 'development') {
             $this->setCache($file, $content);
         }
 
@@ -52,26 +61,44 @@ class Engine extends Content
         return $content;
     }
 
-    public function getContent(string $view, array $config): string
-    {
-        return parent::getContent($view, $config);
-    }
-
+    /**
+     * @param $content
+     * @return string
+     */
     private function handle($content)
     {
-        $content = new Inheritance($content, $this->config);
-        $content = new IncludeTpl($content, $this->config);
-        $content = new ForeachTpl($content);
-        $content = new IfTpl($content);
-        $content = new FuncTpl($content);
-        $content = new VariableTpl($content);
+        Tag::setContent($content);
 
-        return $content;
+        $this->registerTag([
+            'inheritance',
+            'include',
+            'foreach',
+            'if',
+            'func',
+            'variable'
+        ]);
+
+        return Tag::getContent();
     }
 
+    /**
+     * @param File $file
+     * @param $content
+     */
     private function setCache(File $file, $content): void
     {
         $file->create();
         $file->write($content);
+    }
+
+    /**
+     * @param array $tags
+     */
+    private function registerTag(array $tags): void
+    {
+        foreach ($tags as $tag) {
+            $tag = "\\Sketch\Tpl\\" . ucfirst($tag) . "Tag";
+            new $tag;
+        }
     }
 }

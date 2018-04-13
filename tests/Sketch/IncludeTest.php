@@ -3,7 +3,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Sketch\Tpl\IncludeTpl;
+use Sketch\Tpl\IncludeTag;
 
 class IncludeTest extends TestCase
 {
@@ -20,7 +20,7 @@ class IncludeTest extends TestCase
         fwrite($test, 'Test included');
         fclose($test);
 
-        $this->assertEquals('Test included', (string) new IncludeTpl('{include \'test\'}', $config));
+        $this->assertEquals('Test included', (string)new IncludeTag('{include \'test\'}', $config));
 
         unlink('tests/Sketch/test.html');
     }

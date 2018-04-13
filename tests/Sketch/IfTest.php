@@ -3,7 +3,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Sketch\Tpl\IfTpl;
+use Sketch\Tpl\IfTag;
 
 class IfTest extends TestCase
 {
@@ -17,7 +17,7 @@ class IfTest extends TestCase
         $content .= 'True';
         $content .= '{/if}';
 
-        $this->assertEquals($expected, (string) new IfTpl($content));
+        $this->assertEquals($expected, (string)new IfTag($content));
     }
 
     public function testIfWithElse()
@@ -34,7 +34,7 @@ class IfTest extends TestCase
         $content .= 'False';
         $content .= '{/if}';
 
-        $this->assertEquals($expected, (string) new IfTpl($content));
+        $this->assertEquals($expected, (string)new IfTag($content));
     }
 
     public function testIfWithElseIf()
@@ -51,7 +51,7 @@ class IfTest extends TestCase
         $content .= 'True too';
         $content .= '{/if}';
 
-        $this->assertEquals($expected, (string) new IfTpl($content));
+        $this->assertEquals($expected, (string)new IfTag($content));
     }
 
     public function testIfWithElseIfAndElse()
@@ -72,6 +72,6 @@ class IfTest extends TestCase
         $content .= 'False';
         $content .= '{/if}';
 
-        $this->assertEquals($expected, (string) new IfTpl($content));
+        $this->assertEquals($expected, (string)new IfTag($content));
     }
 }
