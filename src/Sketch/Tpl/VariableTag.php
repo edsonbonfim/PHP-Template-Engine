@@ -2,7 +2,6 @@
 
 namespace Sketch\Tpl;
 
-
 class VariableTag extends Tag
 {
     private $pattern = '/{\s?([\w]+.?[\w]+.?[\w]+)\s?\|?\s?([\w]+)?\s?}/is';
