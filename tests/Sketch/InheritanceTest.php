@@ -6,6 +6,10 @@ use PHPUnit\Framework\TestCase;
 use Sketch\Tpl\Tag;
 use Sketch\Tpl\InheritanceTag;
 
+/**
+ * Class InheritanceTest
+ * @package Tests
+ */
 class InheritanceTest extends TestCase
 {
     /**

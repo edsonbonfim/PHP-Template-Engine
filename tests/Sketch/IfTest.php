@@ -6,6 +6,10 @@ use PHPUnit\Framework\TestCase;
 use Sketch\Tpl\Tag;
 use Sketch\Tpl\IfTag;
 
+/**
+ * Class IfTest
+ * @package Tests
+ */
 class IfTest extends TestCase
 {
     public function testBasicIf()

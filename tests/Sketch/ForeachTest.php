@@ -6,6 +6,10 @@ use PHPUnit\Framework\TestCase;
 use Sketch\Tpl\ForeachTag;
 use Sketch\Tpl\Tag;
 
+/**
+ * Class ForeachTest
+ * @package Tests
+ */
 class ForeachTest extends TestCase
 {
     public function testBasicForeach(): void

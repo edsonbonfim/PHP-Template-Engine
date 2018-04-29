@@ -6,6 +6,10 @@ use PHPUnit\Framework\TestCase;
 use Sketch\Tpl\Tag;
 use Sketch\Tpl\FuncTag;
 
+/**
+ * Class FuncTest
+ * @package Tests
+ */
 class FuncTest extends TestCase
 {
     public function testBasicFunc()

@@ -6,6 +6,10 @@ use PHPUnit\Framework\TestCase;
 use Sketch\Tpl\Tag;
 use Sketch\Tpl\IncludeTag;
 
+/**
+ * Class IncludeTest
+ * @package Tests
+ */
 class IncludeTest extends TestCase
 {
     public function testBasicInclude()

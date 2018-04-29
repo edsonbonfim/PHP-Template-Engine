@@ -46,7 +46,7 @@ class Engine
         try {
             $content = $this->handle(Content::getContent($view, Tag::getConfig()));
         } catch (Exception $e) {
-            return $e->getMessage();
+            return $e->getMessage(); // @codeCoverageIgnore
         }
 
         $this->data = array_merge($this->data, $data);
