@@ -3,15 +3,15 @@
 namespace Sketch\Tpl;
 
 /**
- * Class ForeachTag
+ * Class LoopTag
  * @package Sketch\Tpl
  */
-class ForeachTag extends Tag
+class LoopTag extends Tag
 {
     /**
      * @var string
      */
-    private $pattern = '/{\s?foreach (.*?) as ([\w]+)\s?}(.*?){\s?\/foreach\s?}/is';
+    private $pattern = '/{\s?loop (.*?) as ([\w]+)\s?}(.*?){\s?\/loop\s?}/is';
     /**
      * @var string
      */
@@ -49,7 +49,7 @@ class ForeachTag extends Tag
 
                 self::$content = str_replace($this->block, $content, self::$content);
             };
-            new ForeachTag();
+            new LoopTag();
         }
     }
 
