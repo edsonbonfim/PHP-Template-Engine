@@ -3,7 +3,8 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Sketch\Tpl\{Tag, IncludeTag};
+use Sketch\Tpl\Tag;
+use Sketch\Tpl\IncludeTag;
 
 class IncludeTest extends TestCase
 {

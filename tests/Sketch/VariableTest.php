@@ -3,7 +3,8 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Sketch\Tpl\{Tag, VariableTag};
+use Sketch\Tpl\Tag;
+use Sketch\Tpl\VariableTag;
 
 class VariableTest extends TestCase
 {

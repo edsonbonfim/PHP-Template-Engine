@@ -3,7 +3,8 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Sketch\Tpl\{Tag, IfTag};
+use Sketch\Tpl\Tag;
+use Sketch\Tpl\IfTag;
 
 class IfTest extends TestCase
 {

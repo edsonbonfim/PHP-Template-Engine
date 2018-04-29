@@ -3,7 +3,8 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Sketch\Tpl\{Tag, InheritanceTag};
+use Sketch\Tpl\Tag;
+use Sketch\Tpl\InheritanceTag;
 
 class InheritanceTest extends TestCase
 {

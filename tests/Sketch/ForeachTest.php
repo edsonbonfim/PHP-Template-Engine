@@ -3,7 +3,8 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Sketch\Tpl\{ForeachTag, Tag};
+use Sketch\Tpl\ForeachTag;
+use Sketch\Tpl\Tag;
 
 class ForeachTest extends TestCase
 {

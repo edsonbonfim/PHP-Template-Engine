@@ -3,7 +3,8 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Sketch\Tpl\{Tag, FuncTag};
+use Sketch\Tpl\Tag;
+use Sketch\Tpl\FuncTag;
 
 class FuncTest extends TestCase
 {
