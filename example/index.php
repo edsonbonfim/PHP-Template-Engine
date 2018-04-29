@@ -16,11 +16,11 @@ Tpl::assign('title', 'Sketch');
 Tpl::assign('authors', [
     [
         "name"     => "Edson Onildo",
-        "homepage" => "https://github.com/EdsonOnildoJR",
+        "page" => "https://github.com/EdsonOnildoJR",
     ],
     [
         "name"     => "All Contributors",
-        "homepage" => "https://github.com/EdsonOnildoJR/Sketch/contributors",
+        "page" => "https://github.com/EdsonOnildoJR/Sketch/contributors",
     ]
 ]);
 

@@ -3,7 +3,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Sketch\Tpl\FuncTag;
+use Sketch\Tpl\{Tag, FuncTag};
 
 class FuncTest extends TestCase
 {
@@ -12,6 +12,10 @@ class FuncTest extends TestCase
         $expected = '<?php date(\'Y\'); ?>';
         $content  = '{func date(\'Y\')}';
 
-        $this->assertEquals($expected, (string)new FuncTag($content));
+        Tag::setContent($content);
+
+        new FuncTag();
+
+        $this->assertEquals($expected, Tag::getContent());
     }
 }

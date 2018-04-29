@@ -3,23 +3,29 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Sketch\Tpl\VariableTag;
+use Sketch\Tpl\{Tag, VariableTag};
 
 class VariableTest extends TestCase
 {
     public function testBasicVariable()
     {
         $expected = '<?php echo($author->name); ?>';
-        $content  = '{author.name}';
 
-        $this->assertEquals($expected, (string)new VariableTag($content));
+        Tag::setContent('{author.name}');
+
+        new VariableTag();
+
+        $this->assertEquals($expected, Tag::getContent());
     }
 
     public function testFilterUpper()
     {
         $expected = '<?php echo(ucwords(strtolower($name))); ?>';
-        $content  = '{name | capitalize}';
 
-        $this->assertEquals($expected, (string)new VariableTag($content));
+        Tag::setContent('{name | capitalize}');
+
+        new VariableTag();
+
+        $this->assertEquals($expected, Tag::getContent());
     }
 }

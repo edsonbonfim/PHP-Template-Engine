@@ -23,6 +23,7 @@ class Tpl
 
     /**
      * @param array $config
+     * @throws \Exception
      */
     public static function config(array $config): void
     {
@@ -35,6 +36,9 @@ class Tpl
      */
     public static function assign(string $key, $value): void
     {
+        if (is_array($value))
+            $value = json_decode(json_encode($value), false);
+
         self::$assign[$key] = $value;
     }
 

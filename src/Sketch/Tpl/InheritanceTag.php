@@ -8,12 +8,19 @@ class InheritanceTag extends Tag
     private $patternBlock = '/{\s?block \'?"?([\w]+)"?\'?\s?}(.*?){\s?\/block\s?}/is';
     private $patternExtends = '/{\s?extends \'?"?(.*?)"?\'?\s?}/is';
 
+    /**
+     * InheritanceTag constructor.
+     * @throws \Exception
+     */
     public function __construct()
     {
         parent::__construct();
         $this->extends();
     }
 
+    /**
+     * @throws \Exception
+     */
     private function extends(): void
     {
         if (preg_match($this->patternExtends, self::$content, $match)) {

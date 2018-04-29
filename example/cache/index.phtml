@@ -10,16 +10,15 @@
         </header>
 
         <main>
+            
 
-
-            <?php if ($status === true): ?>Verdadeiro<?php else: ?>Falso<?php endif; ?>
+    <?php if($status === true): ?>Verdadeiro<?php else: ?>Falso<?php endif; ?>
 
 
 
             <h1>Credits</h1>
 <ul>
-    <?php foreach ($authors as $author): ?>
-        <li><a href="<?php echo($author->homepage); ?>"><?php echo($author->name); ?></a></li><?php endforeach; ?>
+    <?php foreach($authors as $author): ?><li><a href="<?php echo($author->page); ?>"><?php echo($author->name); ?></a></li><?php endforeach; ?>
 </ul>
 
         </main>

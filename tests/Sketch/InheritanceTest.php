@@ -3,10 +3,13 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Sketch\Tpl\InheritanceTag;
+use Sketch\Tpl\{Tag, InheritanceTag};
 
 class InheritanceTest extends TestCase
 {
+    /**
+     * @throws \Exception
+     */
     public function testBasicInheritance(): void
     {
         $config = [
@@ -25,7 +28,12 @@ class InheritanceTest extends TestCase
         fwrite($test, "Main layout\n{block 'content'}{/block}");
         fclose($test);
 
-        $this->assertEquals($expected, (string)new InheritanceTag($content, $config));
+        Tag::setConfig($config);
+        Tag::setContent($content);
+
+        new InheritanceTag();
+
+        $this->assertEquals($expected, Tag::getContent());
 
         unlink('tests/Sketch/test.html');
     }
