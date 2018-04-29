@@ -7,10 +7,10 @@ use Sketch\Tpl\LoopTag;
 use Sketch\Tpl\Tag;
 
 /**
- * Class ForeachTest
+ * Class LoopTest
  * @package Tests
  */
-class ForeachTest extends TestCase
+class LoopTest extends TestCase
 {
     public function testBasicForeach(): void
     {
@@ -18,9 +18,9 @@ class ForeachTest extends TestCase
         $expected .= '<p>{admin.name}</p>';
         $expected .= '<?php endforeach; ?>';
 
-        $content  = '{foreach users.admin as admin}';
+        $content  = '{loop users.admin as admin}';
         $content .= '<p>{admin.name}</p>';
-        $content .= '{/foreach}';
+        $content .= '{/loop}';
 
         Tag::setContent($content);
 
