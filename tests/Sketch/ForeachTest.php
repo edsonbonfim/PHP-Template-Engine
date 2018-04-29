@@ -3,7 +3,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Sketch\Tpl\ForeachTag;
+use Sketch\Tpl\LoopTag;
 use Sketch\Tpl\Tag;
 
 /**
@@ -24,7 +24,7 @@ class ForeachTest extends TestCase
 
         Tag::setContent($content);
 
-        new ForeachTag();
+        new LoopTag();
 
         $this->assertEquals($expected, Tag::getContent());
     }

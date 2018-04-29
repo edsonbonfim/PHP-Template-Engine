@@ -79,7 +79,7 @@ class Engine
         $this->registerTag([
             'inheritance',
             'include',
-            'foreach',
+            'loop',
             'if',
             'func',
             'variable'
