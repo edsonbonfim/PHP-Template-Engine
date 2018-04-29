@@ -2,12 +2,23 @@
 
 namespace Sketch\Tpl;
 
+/**
+ * Trait ElseifView
+ * @package Sketch\Tpl
+ */
 trait ElseifView
 {
+    /**
+     * @var array
+     */
     private $elseif = array();
 
+    /**
+     * @param $condition
+     * @return string
+     */
     abstract public function setCondition($condition): string;
-    
+
     private function setElseifContent()
     {
         $pattern = '/{\s?elseif (.*?)\s?([><!=])(=)?(=)?\s?(.*?)\s?}(.*?){end}/is';

@@ -2,12 +2,31 @@
 
 namespace Sketch\Tpl;
 
+/**
+ * Class VariableTag
+ * @package Sketch\Tpl
+ */
 class VariableTag extends Tag
 {
+    /**
+     * @var string
+     */
     private $pattern = '/{\s?([\w]+.?[\w]+.?[\w]+)\s?\|?\s?([\w]+)?\s?}/is';
+    /**
+     * @var array
+     */
     private $match   = [];
+    /**
+     * @var array
+     */
     private $matches = [];
+    /**
+     * @var string
+     */
     private $replace = '';
+    /**
+     * @var string
+     */
     private $variable = '';
 
     public function handle(): void
@@ -38,6 +57,9 @@ class VariableTag extends Tag
         $this->variable = $variable;
     }
 
+    /**
+     * @param string $name
+     */
     private function filter(string $name): void
     {
         $this->$name();

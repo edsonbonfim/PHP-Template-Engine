@@ -2,10 +2,23 @@
 
 namespace Sketch\Tpl;
 
+/**
+ * Class InheritanceTag
+ * @package Sketch\Tpl
+ */
 class InheritanceTag extends Tag
 {
+    /**
+     * @var array
+     */
     private $blocks = [];
+    /**
+     * @var string
+     */
     private $patternBlock = '/{\s?block \'?"?([\w]+)"?\'?\s?}(.*?){\s?\/block\s?}/is';
+    /**
+     * @var string
+     */
     private $patternExtends = '/{\s?extends \'?"?(.*?)"?\'?\s?}/is';
 
     /**

@@ -4,12 +4,16 @@ include '../vendor/autoload.php';
 
 use Sketch\Tpl;
 
-Tpl::config([
-    //'environment'  => 'production',
-    'environment' => 'development',
-    'template_dir' => 'view',
-    'cache_dir' => 'cache'
-]);
+try {
+    Tpl::config([
+        //'environment'  => 'production',
+        'environment' => 'development',
+        'template_dir' => 'view',
+        'cache_dir' => 'cache'
+    ]);
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
 
 Tpl::assign('status', true);
 Tpl::assign('title', 'Sketch');

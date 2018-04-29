@@ -2,13 +2,35 @@
 
 namespace Sketch\Tpl;
 
+/**
+ * Class ForeachTag
+ * @package Sketch\Tpl
+ */
 class ForeachTag extends Tag
 {
+    /**
+     * @var string
+     */
     private $pattern = '/{\s?foreach (.*?) as ([\w]+)\s?}(.*?){\s?\/foreach\s?}/is';
+    /**
+     * @var string
+     */
     private $block = '';
+    /**
+     * @var string
+     */
     private $array = '';
+    /**
+     * @var string
+     */
     private $callback = '';
+    /**
+     * @var string
+     */
     private $foreachContent = '';
+    /**
+     * @var
+     */
     private $match;
 
     public function handle(): void

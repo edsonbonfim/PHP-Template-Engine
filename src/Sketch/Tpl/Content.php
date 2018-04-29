@@ -2,6 +2,10 @@
 
 namespace Sketch\Tpl;
 
+/**
+ * Class Content
+ * @package Sketch\Tpl
+ */
 class Content
 {
     /**

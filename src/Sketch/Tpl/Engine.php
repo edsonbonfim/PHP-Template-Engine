@@ -4,8 +4,15 @@ namespace Sketch\Tpl;
 
 use Exception;
 
+/**
+ * Class Engine
+ * @package Sketch\Tpl
+ */
 class Engine
 {
+    /**
+     * @var array
+     */
     private $data = [];
 
     /**

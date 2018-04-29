@@ -2,11 +2,25 @@
 
 namespace Sketch\Tpl;
 
+/**
+ * Class File
+ * @package Sketch\Tpl
+ */
 class File
 {
+    /**
+     * @var string
+     */
     private $fname;
+    /**
+     * @var
+     */
     private $file;
 
+    /**
+     * File constructor.
+     * @param string|null $fname
+     */
     public function __construct(string $fname = null)
     {
         $this->fname = $fname;
@@ -32,17 +46,27 @@ class File
         return $this->file = fopen($this->fname, 'r');
     }
 
+    /**
+     * @return bool|resource
+     */
     public function create()
     {
         return $this->file = fopen($this->fname, 'w+');
     }
 
+    /**
+     * @param string $content
+     */
     public function write(string $content): void
     {
         fwrite($this->file, $content);
         fseek($this->file, 0);
     }
 
+    /**
+     * @param array $data
+     * @return string
+     */
     public function read(array $data): string
     {
         extract($data);
@@ -54,6 +78,9 @@ class File
         return ob_get_clean();
     }
 
+    /**
+     *
+     */
     public function close(): void
     {
         fclose($this->file);

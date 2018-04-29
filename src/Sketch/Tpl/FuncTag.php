@@ -2,11 +2,27 @@
 
 namespace Sketch\Tpl;
 
+/**
+ * Class FuncTag
+ * @package Sketch\Tpl
+ */
 class FuncTag extends Tag
 {
+    /**
+     * @var string
+     */
     private $pattern = '/{\s?func ([\w]+)\((.*?)\)\s?}/is';
+    /**
+     * @var
+     */
     private $match;
+    /**
+     * @var
+     */
     private $funcName;
+    /**
+     * @var
+     */
     private $funcArgs;
 
     public function handle(): void

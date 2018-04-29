@@ -2,8 +2,15 @@
 
 namespace Sketch\Tpl;
 
+/**
+ * Trait ElseView
+ * @package Sketch\Tpl
+ */
 trait ElseView
 {
+    /**
+     * @var string
+     */
     private $elseContent = '';
 
     private function setElseContent()

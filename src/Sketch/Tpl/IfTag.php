@@ -2,18 +2,46 @@
 
 namespace Sketch\Tpl;
 
+/**
+ * Class IfTag
+ * @package Sketch\Tpl
+ */
 class IfTag extends Tag
 {
     use ElseView;
     use ElseifView;
 
+    /**
+     * @var string
+     */
     private $pattern = '/{\s?if (.*?)\s?([><!=])(=)?(=)?\s?(.*?)\s?}(.*?){\s?\/if\s?}/is';
+    /**
+     * @var string
+     */
     private $block = '';
+    /**
+     * @var string
+     */
     private $firstCondition = '';
+    /**
+     * @var string
+     */
     private $secondCondition = '';
+    /**
+     * @var string
+     */
     private $operator = '';
+    /**
+     * @var string
+     */
     private $ifContent = '';
+    /**
+     * @var
+     */
     private $replace;
+    /**
+     * @var
+     */
     private $match;
 
     public function handle(): void
@@ -61,6 +89,10 @@ class IfTag extends Tag
         $this->secondCondition = $this->setCondition($this->match[5]);
     }
 
+    /**
+     * @param $condition
+     * @return string
+     */
     private function setCondition($condition) : string
     {
         if ($this->isVariable($condition)) {
@@ -93,6 +125,10 @@ class IfTag extends Tag
         $this->replace .= "<?php endif; ?>";
     }
 
+    /**
+     * @param $term
+     * @return bool
+     */
     private function isVariable($term)
     {
         return (is_numeric($term)
@@ -100,11 +136,19 @@ class IfTag extends Tag
         || $this->isReservedKey($term)) ? false : true;
     }
 
+    /**
+     * @param $key
+     * @return bool
+     */
     private function isReservedKey($key)
     {
         return ($key == "null" || $key == "true" || $key == "false") ? true : false;
     }
 
+    /**
+     * @param string $string
+     * @return bool
+     */
     private function isStringValue(string $string)
     {
         return (substr($string, 0, 1) == '"' || substr($string, 0, 1) == "'") ? true : false;

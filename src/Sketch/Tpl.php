@@ -4,9 +4,19 @@ namespace Sketch;
 
 use Sketch\Tpl\Engine;
 
+/**
+ * Class Tpl
+ * @package Sketch
+ */
 class Tpl
 {
+    /**
+     * @var array
+     */
     private static $assign = [];
+    /**
+     * @var null
+     */
     private static $engine = null;
 
     /**

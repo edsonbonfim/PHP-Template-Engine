@@ -2,8 +2,15 @@
 
 namespace Sketch\Tpl;
 
+/**
+ * Class IncludeTag
+ * @package Sketch\Tpl
+ */
 class IncludeTag extends Tag
 {
+    /**
+     * @var string
+     */
     private $pattern = '/{\s?include \'?"?(.*?)"?\'?\s?}/is';
 
     public function handle(): void
