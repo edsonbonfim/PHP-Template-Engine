@@ -8,12 +8,9 @@
 
 This is the full documentation for Sketch 2.0.x
 
-# Prerequisites
-
-Sketch requires **PHP >= 7.1.0**
-
 # Table of Contents
 
+* [Prerequisites](#prerequisites)
 * [Installation](#installation)
 * [Basic Usage](#basic-usage)
 * [Sketch Tags](#sketch-tags)
@@ -26,6 +23,10 @@ Sketch requires **PHP >= 7.1.0**
 * [Security](#security)
 * [Credits](#credits)
 * [License](#license)
+
+# Prerequisites
+
+* PHP 7.1+
 
 # Installation
 
