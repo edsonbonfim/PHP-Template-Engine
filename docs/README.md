@@ -1,4 +1,4 @@
-# Sketch 2.0 Documentation
+# Sketch 2.1 Documentation
 
 [![Latest Version][ico-version]][link-version]
 [![Build Status][ico-travis]][link-travis]
@@ -6,7 +6,7 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![StyleCI][ico-styleci]][link-styleci]
 
-This is the full documentation for Sketch 2.0.x
+This is the full documentation for Sketch 2.1.x
 
 # Table of Contents
 
@@ -36,7 +36,7 @@ Create a **composer.json** inside your application folder:
 ``` json
 {
     "require": {
-        "sketchphp/sketch": ">=2.0.0"
+        "sketchphp/sketch": "^2.1"
     }
 }
 ```
@@ -167,9 +167,13 @@ Allow to loop through the value of arrays or objects.
 
 **Template:**
 ``` html
-{foreach authors as author}
-    {author.name}: {author.homepage}
-{/foreach}
+<ul>
+    {loop authors as author}
+    <li>
+        {author.name}: {author.page}
+    </li>
+    {/loop}
+</ul>
 ```
 
 **Data:**
@@ -178,12 +182,12 @@ Allow to loop through the value of arrays or objects.
 
 $authors = [
     [
-        'name'     => 'Edson Onildo',
-        'homepage' => 'https://github.com/EdsonOnildoJR'
+        'name' => 'Edson Onildo',
+        'page' => 'https://github.com/EdsonOnildoJR'
     ],
     [
-        'name'     => 'Contributors',
-        'homepage' => 'https://github.com/EdsonOnildoJR/Sketch/contributors'
+        'name' => 'Contributors',
+        'page' => 'https://github.com/EdsonOnildoJR/Sketch/contributors'
     ]
 ];
 
