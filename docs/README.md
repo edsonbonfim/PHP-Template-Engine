@@ -10,7 +10,7 @@ Sketch 2.1 Documentation
 This is the full documentation for Sketch 2.1.x
 
 Table of Contents
-=================
+-----------------
 
 * [Prerequisites](#prerequisites)
 * [Installation](#installation)
@@ -27,12 +27,12 @@ Table of Contents
 * [License](#license)
 
 Prerequisites
-=============
+-------------
 
 * PHP 7.1+
 
 Installation
-============
+------------
 
 Require via [composer](https://getcomposer.org/download/)
 
@@ -41,11 +41,9 @@ $ composer require sketchphp/sketch:^2.1
 ```
 
 Basic usage
-===========
+-----------
 
-### Setup
-
-Create an **index.php** file and require the autoload.php of Composer
+Create an **index.php** file and require the autoload.php of composer
 
 ``` php
 <?php
@@ -66,8 +64,6 @@ Tpl::config([
 ]);
 ```
 
-### What are you waiting for?
-
 Assign and render template
 
 ``` php
@@ -76,7 +72,7 @@ Tpl::render('test');
 ```
 
 Sketch Tags
-===========
+-----------
 
 * [Variables](#variables)
 * [Conditional Expression](#conditional-expression)
@@ -84,8 +80,7 @@ Sketch Tags
 * [Function](#function)
 * [Include](#include)
 
-Variables
----------
+### Variables
 
 Variables are the dynamic content of the template, valorized on the execution of the script with Tpl::assing() static method. Variables names are case sensitive.
 
@@ -127,8 +122,7 @@ Tpl::assign('name', 'edson onildo');
 Hello Edson Onildo!
 ```
 
-Conditional Expression
-----------------------
+#### Conditional Expression
 
 Checks an expression and print the code between {if}{else} if the conditions is true or {else}{/if} if the condition is false. Try to use nested blocks :)
 
@@ -155,8 +149,7 @@ Adult
 
 you can also use the {if condition}content{elseif condition}content{else}content{/if} or any combination of if and else.
 
-Loop
-----
+### Loop
 
 Allow to loop through the value of arrays or objects.
 
@@ -195,8 +188,7 @@ Edson Onildo: https://github.com/EdsonOnildoJR
 Contributors: https://github.com/EdsonOnildoJR/Sketch/contributors
 ```
 
-Function
---------
+### Function
 
 Use {func  funcname()} tag to execute a PHP function and print the result. You can pass strings, numbers and variables as parameters.
 
@@ -210,8 +202,7 @@ Use {func  funcname()} tag to execute a PHP function and print the result. You c
 2018
 ```
 
-Include
--------
+### Include
 
 With **{include 'template'}** tag you can include external template as blocks.
 
@@ -230,23 +221,23 @@ With **{include 'template'}** tag you can include external template as blocks.
 ```
 
 Contributing
-============
+------------
 
 Please see [CONTRIBUTING](https://github.com/EdsonOnildoJR/Sketch/blob/master/CONTRIBUTING.md) and [CODE_OF_CONDUCT](https://github.com/EdsonOnildoJR/Sketch/blob/master/CODE_OF_CONDUCT.md) for details.
 
 Security
-========
+--------
 
 If you discover any security related issues, please email inbox.edsononildo@gmail.com instead of using the issue tracker.
 
 Credits
-=======
+-------
 
 * [Edson Onildo][link-author]
 * [All Contributors][link-contributors]
 
 License
-=======
+-------
 
 The MIT License (MIT). Please see [License File](https://github.com/EdsonOnildoJR/Sketch/blob/master/LICENSE.md) for more information.
 
