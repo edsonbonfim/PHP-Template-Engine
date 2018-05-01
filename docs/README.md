@@ -242,8 +242,8 @@ If you discover any security related issues, please email inbox.edsononildo@gmai
 Credits
 =======
 
-- [Edson Onildo][link-author]
-- [All Contributors][link-contributors]
+* [Edson Onildo][link-author]
+* [All Contributors][link-contributors]
 
 License
 =======
