@@ -1,4 +1,5 @@
-# Sketch 2.1 Documentation
+Sketch 2.1 Documentation
+========================
 
 [![Latest Version][ico-version]][link-version]
 [![Build Status][ico-travis]][link-travis]
@@ -8,7 +9,8 @@
 
 This is the full documentation for Sketch 2.1.x
 
-# Table of Contents
+Table of Contents
+=================
 
 * [Prerequisites](#prerequisites)
 * [Installation](#installation)
@@ -24,29 +26,22 @@ This is the full documentation for Sketch 2.1.x
 * [Credits](#credits)
 * [License](#license)
 
-# Prerequisites
+Prerequisites
+=============
 
 * PHP 7.1+
 
-# Installation
+Installation
+============
 
-Install composer [https://getcomposer.org/download/](https://getcomposer.org/download/)
+Require via [composer](https://getcomposer.org/download/)
 
-Create a **composer.json** inside your application folder:
-``` json
-{
-    "require": {
-        "sketchphp/sketch": "^2.1"
-    }
-}
-```
-
-Open the command line and run the following:
 ``` sh
-$ composer install
+$ composer require sketchphp/sketch:^2.1
 ```
 
-# Basic usage
+Basic usage
+===========
 
 ### Setup
 
@@ -61,8 +56,6 @@ include 'vendor/autoload.php';
 After that, let's to do all necessary configuration
 
 ``` php
-<?php
-
 use Sketch\Tpl;
 
 Tpl::config([
@@ -78,13 +71,12 @@ Tpl::config([
 Assign and render template
 
 ``` php
-<?php
-
 Tpl::assing('title', 'Hello!');
 Tpl::render('test');
 ```
 
-# Sketch Tags
+Sketch Tags
+===========
 
 * [Variables](#variables)
 * [Conditional Expression](#conditional-expression)
@@ -92,7 +84,8 @@ Tpl::render('test');
 * [Function](#function)
 * [Include](#include)
 
-## Variables
+Variables
+---------
 
 Variables are the dynamic content of the template, valorized on the execution of the script with Tpl::assing() static method. Variables names are case sensitive.
 
@@ -134,7 +127,8 @@ Tpl::assign('name', 'edson onildo');
 Hello Edson Onildo!
 ```
 
-## Conditional Expression
+Conditional Expression
+----------------------
 
 Checks an expression and print the code between {if}{else} if the conditions is true or {else}{/if} if the condition is false. Try to use nested blocks :)
 
@@ -161,7 +155,8 @@ Adult
 
 you can also use the {if condition}content{elseif condition}content{else}content{/if} or any combination of if and else.
 
-## Loop
+Loop
+----
 
 Allow to loop through the value of arrays or objects.
 
@@ -200,7 +195,8 @@ Edson Onildo: https://github.com/EdsonOnildoJR
 Contributors: https://github.com/EdsonOnildoJR/Sketch/contributors
 ```
 
-## Function
+Function
+--------
 
 Use {func  funcname()} tag to execute a PHP function and print the result. You can pass strings, numbers and variables as parameters.
 
@@ -214,7 +210,8 @@ Use {func  funcname()} tag to execute a PHP function and print the result. You c
 2018
 ```
 
-## Include
+Include
+-------
 
 With **{include 'template'}** tag you can include external template as blocks.
 
@@ -232,20 +229,24 @@ With **{include 'template'}** tag you can include external template as blocks.
 </form>
 ```
 
-## Contributing
+Contributing
+============
 
 Please see [CONTRIBUTING](https://github.com/EdsonOnildoJR/Sketch/blob/master/CONTRIBUTING.md) and [CODE_OF_CONDUCT](https://github.com/EdsonOnildoJR/Sketch/blob/master/CODE_OF_CONDUCT.md) for details.
 
-## Security
+Security
+========
 
 If you discover any security related issues, please email inbox.edsononildo@gmail.com instead of using the issue tracker.
 
-## Credits
+Credits
+=======
 
 - [Edson Onildo][link-author]
 - [All Contributors][link-contributors]
 
-## License
+License
+=======
 
 The MIT License (MIT). Please see [License File](https://github.com/EdsonOnildoJR/Sketch/blob/master/LICENSE.md) for more information.
 
