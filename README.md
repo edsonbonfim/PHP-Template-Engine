@@ -10,7 +10,7 @@ Sketch
 Sketch is an PHP template engine and provide a better way to produce dynamic web pages.
 
 Install
-=======
+-------
 
 Require via [composer](https://getcomposer.org/download/)
 
@@ -19,28 +19,28 @@ $ composer require sketchphp/sketch:^2.1
 ```
 
 Documentation
-=============
+-------------
 
 [Check out the documentation](https://EdsonOnildoJR.github.io/Sketch).
 
 Contributing
-============
+------------
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) and [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md) for details.
 
 Security
-========
+--------
 
 If you discover any security related issues, please email inbox.edsononildo@gmail.com instead of using the issue tracker.
 
 Credits
-=======
+-------
 
 * [Edson Onildo][link-author]
 * [All Contributors][link-contributors]
 
 License
-=======
+-------
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
