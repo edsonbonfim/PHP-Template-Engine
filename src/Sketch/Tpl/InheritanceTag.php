@@ -12,10 +12,7 @@ class InheritanceTag extends Tag
      * @var array
      */
     private $blocks = [];
-    /**
-     * @var string
-     */
-    private $patternBlock = '/{\s?block \'?"?([\w]+)"?\'?\s?}(.*?){\s?\/block\s?}/is';
+    
     /**
      * @var string
      */
@@ -27,7 +24,7 @@ class InheritanceTag extends Tag
      */
     public function __construct()
     {
-        parent::__construct();
+        parent::__construct('/{\s?block \'?"?([\w]+)"?\'?\s?}(.*?){\s?\/block\s?}/is');
         $this->extends();
     }
 
@@ -55,11 +52,7 @@ class InheritanceTag extends Tag
 
     public function handle(): void
     {
-        if (preg_match_all($this->patternBlock, self::$content, $matches, PREG_SET_ORDER)) {
-            for ($i = 0; $i < count($matches); $i++) {
-                $this->blocks[$matches[$i][1]] = $matches[$i][2];
-                self::$content = str_replace($this->blocks[$matches[$i][1]], '', self::$content);
-            };
-        }
+        $this->blocks[$this->match[1]] = $this->match[2];
+        self::$content = str_replace($this->blocks[$this->match[1]], '', self::$content);
     }
 }

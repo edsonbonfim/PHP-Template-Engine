@@ -9,14 +9,6 @@ namespace Sketch\Tpl;
 class FuncTag extends Tag
 {
     /**
-     * @var string
-     */
-    private $pattern = '/{\s?func ([\w]+)\((.*?)\)\s?}/is';
-    /**
-     * @var
-     */
-    private $match;
-    /**
      * @var
      */
     private $funcName;
@@ -25,17 +17,18 @@ class FuncTag extends Tag
      */
     private $funcArgs;
 
+    public function __construct()
+    {
+        parent::__construct('/{\s?func ([\w]+)\((.*?)\)\s?}/is');
+    }
+
     public function handle(): void
     {
-        if (preg_match_all($this->pattern, self::$content, $matches, PREG_SET_ORDER)) {
-            for ($i = 0; $i < count($matches); $i++) {
-                $this->match = $matches[$i];
-                $this->setFuncName();
-                $this->setFuncArgs();
-                $content = '<?php '.$this->funcName.'('.$this->funcArgs.'); ?>';
-                self::$content = str_replace($matches[$i][0], $content, self::$content);
-            };
-        }
+        $this->setFuncName();
+        $this->setFuncArgs();
+        
+        $content = '<?php '.$this->funcName.'('.$this->funcArgs.'); ?>';
+        self::$content = str_replace($this->match[0], $content, self::$content);
     }
 
     private function setFuncName()

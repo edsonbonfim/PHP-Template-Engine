@@ -11,10 +11,6 @@ class LoopTag extends Tag
     /**
      * @var string
      */
-    private $pattern = '/{\s?loop (.*?) as ([\w]+)\s?}(.*?){\s?\/loop\s?}/is';
-    /**
-     * @var string
-     */
     private $block = '';
     /**
      * @var string
@@ -31,26 +27,24 @@ class LoopTag extends Tag
     /**
      * @var
      */
-    private $match;
+
+    public function __construct()
+    {
+        parent::__construct('/{\s?loop (.*?) as ([\w]+)\s?}(.*?){\s?\/loop\s?}/is');
+    }
 
     public function handle(): void
     {
-        if (preg_match_all($this->pattern, self::$content, $matches, PREG_SET_ORDER)) {
-            for ($i = 0; $i < count($matches); $i++) {
-                $this->match = $matches[$i];
-                $this->setForeachBlock();
-                $this->setForeachArray();
-                $this->setForeachCallback();
-                $this->setForeachContent();
+        $this->setForeachBlock();
+        $this->setForeachArray();
+        $this->setForeachCallback();
+        $this->setForeachContent();
 
-                $content  = "<?php foreach({$this->array} as {$this->callback}): ?>";
-                $content .= $this->foreachContent;
-                $content .= "<?php endforeach; ?>";
+        $content  = "<?php foreach({$this->array} as {$this->callback}): ?>";
+        $content .= $this->foreachContent;
+        $content .= "<?php endforeach; ?>";
 
-                self::$content = str_replace($this->block, $content, self::$content);
-            };
-            new LoopTag();
-        }
+        self::$content = str_replace($this->block, $content, self::$content);
     }
 
     private function setForeachBlock() : void

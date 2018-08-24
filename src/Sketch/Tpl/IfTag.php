@@ -14,10 +14,6 @@ class IfTag extends Tag
     /**
      * @var string
      */
-    private $pattern = '/{\s?if (.*?)\s?([><!=])(=)?(=)?\s?(.*?)\s?}(.*?){\s?\/if\s?}/is';
-    /**
-     * @var string
-     */
     private $block = '';
     /**
      * @var string
@@ -39,34 +35,28 @@ class IfTag extends Tag
      * @var
      */
     private $replace;
-    /**
-     * @var
-     */
-    private $match;
+
+    public function __construct()
+    {
+        parent::__construct('/{\s?if (.*?)\s?([><!=])(=)?(=)?\s?(.*?)\s?}(.*?){\s?\/if\s?}/is');
+    }
 
     public function handle(): void
     {
-        if (preg_match_all($this->pattern, self::$content, $matches, PREG_SET_ORDER)) {
-            for ($i = 0; $i < count($matches); $i++) {
-                $this->match = $matches[$i];
+        $this->setIfBlock();
+        $this->setIfOperator();
+        $this->setIfFirstCondition();
+        $this->setIfSecondCondition();
+        $this->setIfContents();
 
-                $this->setIfBlock();
-                $this->setIfOperator();
-                $this->setIfFirstCondition();
-                $this->setIfSecondCondition();
-                $this->setIfContents();
+        $this->if();
+        $this->elseif();
+        $this->else();
+        $this->endif();
 
-                $this->if();
-                $this->elseif();
-                $this->else();
-                $this->endif();
+        $this->elseif = [];
 
-                $this->elseif = [];
-
-                self::$content = str_replace($this->block, $this->replace, self::$content);
-            }
-            new IfTag();
-        }
+        self::$content = str_replace($this->block, $this->replace, self::$content);
     }
 
     private function setIfBlock() : void

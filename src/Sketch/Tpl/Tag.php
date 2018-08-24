@@ -17,12 +17,20 @@ abstract class Tag
      */
     protected static $config;
 
+    protected $match = [];
+
     /**
      * Tag constructor.
      */
-    public function __construct()
+    public function __construct(string $pattern)
     {
-        $this->handle();
+        if (preg_match_all($pattern, self::getContent(), $matches, PREG_SET_ORDER)) {
+            for ($i = 0; $i < count($matches); $i++) {
+                $this->match = $matches[$i];
+                $this->handle();
+            }
+            $this->handle();
+        }
     }
 
     /**
