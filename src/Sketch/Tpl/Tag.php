@@ -12,6 +12,7 @@ abstract class Tag
      * @var
      */
     protected static $content;
+    
     /**
      * @var
      */
@@ -25,18 +26,23 @@ abstract class Tag
     public function __construct(string $pattern)
     {
         if (preg_match_all($pattern, self::getContent(), $matches, PREG_SET_ORDER)) {
-            for ($i = 0; $i < count($matches); $i++) {
+            $count = count($matches);
+            for ($i = 0; $i < $count; $i++) {
                 $this->match = $matches[$i];
-                $this->handle();
+                $this->replace($this->handle());
             }
-            $this->handle();
         }
     }
 
     /**
      * @return mixed
      */
-    abstract public function handle();
+    abstract public function handle(): string;
+
+    protected function replace(string $replace): void
+    {
+        self::setContent(str_replace($this->match[0], $replace, self::getContent()));
+    }
 
     /**
      * @param string $content

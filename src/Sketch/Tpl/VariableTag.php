@@ -27,12 +27,13 @@ class VariableTag extends Tag
         parent::__construct('/{\s?([\w]+.?[\w]+.?[\w]+)\s?\|?\s?([\w]+)?\s?}/is');
     }
 
-    public function handle(): void
+    public function handle(): string
     {
         $this->getVariable();
         $this->replace = '<?php echo('.$this->variable.'); ?>';
         $this->filter('upper');
-        self::$content = str_replace($this->match[0], $this->replace, self::$content);
+
+        return $this->replace;
     }
 
     private function getVariable(): void

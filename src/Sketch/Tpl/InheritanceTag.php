@@ -35,11 +35,11 @@ class InheritanceTag extends Tag
     {
         if (preg_match($this->patternExtends, self::$content, $match)) {
             self::$content = Content::getContent($match[1], self::$config);
-            $this->replace();
+            $this->replaceTag();
         }
     }
 
-    private function replace(): void
+    private function replaceTag(): void
     {
         foreach ($this->blocks as $key => $value) {
             $pattern = '/{\s?block \'?"?' . $key . '"?\'?\s?}(.*?){\s?\/block\s?}/is';
@@ -50,9 +50,10 @@ class InheritanceTag extends Tag
         self::$content = preg_replace('/{\s?\/block\s?}/is', '', self::$content);
     }
 
-    public function handle(): void
+    public function handle(): string
     {
         $this->blocks[$this->match[1]] = $this->match[2];
         self::$content = str_replace($this->blocks[$this->match[1]], '', self::$content);
+        return '';
     }
 }

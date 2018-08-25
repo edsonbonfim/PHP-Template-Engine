@@ -33,18 +33,18 @@ class LoopTag extends Tag
         parent::__construct('/{\s?loop (.*?) as ([\w]+)\s?}(.*?){\s?\/loop\s?}/is');
     }
 
-    public function handle(): void
+    public function handle(): string
     {
         $this->setForeachBlock();
         $this->setForeachArray();
         $this->setForeachCallback();
         $this->setForeachContent();
 
-        $content  = "<?php foreach({$this->array} as {$this->callback}): ?>";
-        $content .= $this->foreachContent;
-        $content .= "<?php endforeach; ?>";
+        $replace  = "<?php foreach({$this->array} as {$this->callback}): ?>";
+        $replace .= $this->foreachContent;
+        $replace .= "<?php endforeach; ?>";
 
-        self::$content = str_replace($this->block, $content, self::$content);
+        return $replace;
     }
 
     private function setForeachBlock() : void
