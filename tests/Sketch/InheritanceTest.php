@@ -5,7 +5,6 @@ namespace Tests;
 use PHPUnit\Framework\TestCase;
 use Sketch\Tpl\Tag;
 use Sketch\Tpl\InheritanceTag;
-use Sketch\Tpl\File;
 
 /**
  * Class InheritanceTest
@@ -30,12 +29,9 @@ class InheritanceTest extends TestCase
         $content .= 'Child block';
         $content .= '{/block}';
 
-
-        $file = new File('tests/Sketch/test.html');
-        $file->create();
-        $file->exists();
-        $file->write("Main layout\n{block 'content'}{/block}");
-        $file->close();
+        $test = fopen('tests/Sketch/test.html', 'w+');
+        fwrite($test, "Main layout\n{block 'content'}{/block}");
+        fclose($test);
 
         Tag::setConfig($config);
         Tag::setContent($content);
