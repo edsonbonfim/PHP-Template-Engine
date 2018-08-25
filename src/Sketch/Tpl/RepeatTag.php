@@ -15,14 +15,6 @@ class RepeatTag extends Tag
     {
         static $count = 0;
 
-        if (!empty($match[5]) && empty($match[7])) {
-            throw new \Exception("Invalid tag"); // @codeCoverageIgnore
-        }
-
-        if (empty($match[5]) && !empty($match[7])) {
-            throw new \Exception("Invalid tag"); // @codeCoverageIgnore
-        }
-
         $index = !empty($match[5]) && !empty($match[7])
             ? $match[7]
             : 'index' . ++$count;
