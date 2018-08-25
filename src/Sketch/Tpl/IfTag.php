@@ -43,7 +43,6 @@ class IfTag extends Tag
 
     public function handle(array $match): string
     {
-        $this->setIfBlock();
         $this->setIfOperator();
         $this->setIfFirstCondition();
         $this->setIfSecondCondition();
@@ -57,11 +56,6 @@ class IfTag extends Tag
         $this->elseif = [];
 
         return $this->replace;
-    }
-
-    private function setIfBlock() : void
-    {
-        $this->block = $this->match[0];
     }
 
     private function setIfOperator() : void

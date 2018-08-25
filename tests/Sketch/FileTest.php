@@ -9,7 +9,7 @@ class FileTest extends TestCase
 {
     public $file;
 
-    public function SetUp()
+    public function setUp()
     {
         $this->file = new File('test.txt');
     }
