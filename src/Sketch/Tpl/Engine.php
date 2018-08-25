@@ -77,12 +77,13 @@ class Engine
         Tag::setContent($content);
 
         $this->registerTag([
-            'inheritance',
-            'include',
-            'loop',
-            'if',
-            'func',
-            'variable'
+            'Inheritance',
+            'Include',
+            'Loop',
+            'Repeat',
+            'If',
+            'Func',
+            'Variable'
         ]);
 
         return Tag::getContent();
