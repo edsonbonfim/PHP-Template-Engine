@@ -83,6 +83,7 @@ class Engine
             'Repeat',
             'If',
             'Func',
+            'Eval',
             'Variable'
         ]);
 
