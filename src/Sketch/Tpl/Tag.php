@@ -29,7 +29,11 @@ abstract class Tag
             $count = count($matches);
             for ($i = 0; $i < $count; $i++) {
                 $this->match = $matches[$i];
-                $this->replace($this->handle());
+                $this->replace($this->handle($this->match));
+            }
+
+            if (get_called_class() != 'Sketch\Tpl\InheritanceTag') {
+                $this->__construct($pattern);
             }
         }
     }
@@ -37,7 +41,7 @@ abstract class Tag
     /**
      * @return mixed
      */
-    abstract public function handle(): string;
+    abstract public function handle(array $match): string;
 
     protected function replace(string $replace): void
     {

@@ -17,7 +17,7 @@ class ViewTest extends TestCase
     public function testView()
     {
         $test = fopen('tests/Sketch/test.html', 'w+');
-        fwrite($test, 'Welcome {user.name} ({user.email})!');
+        fwrite($test, 'Welcome {{user.name}} ({{user.email}})!');
         fclose($test);
 
         Tpl::assign('user', [

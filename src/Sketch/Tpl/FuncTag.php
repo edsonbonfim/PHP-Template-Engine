@@ -13,8 +13,8 @@ class FuncTag extends Tag
         parent::__construct('/{\s?func ([\w]+)\((.*?)\)\s?}/is');
     }
 
-    public function handle(): string
+    public function handle(array $match): string
     {
-        return '<?php '.$this->match[1].'('.$this->match[2].'); ?>';
+        return '<?php '.$match[1].'('.$match[2].'); ?>';
     }
 }

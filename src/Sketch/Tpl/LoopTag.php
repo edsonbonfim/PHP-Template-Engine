@@ -33,7 +33,7 @@ class LoopTag extends Tag
         parent::__construct('/{\s?loop (.*?) as ([\w]+)\s?}(.*?){\s?\/loop\s?}/is');
     }
 
-    public function handle(): string
+    public function handle(array $match): string
     {
         $this->setForeachBlock();
         $this->setForeachArray();

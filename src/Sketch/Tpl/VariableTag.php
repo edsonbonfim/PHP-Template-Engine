@@ -24,13 +24,13 @@ class VariableTag extends Tag
 
     public function __construct()
     {
-        parent::__construct('/{\s?([\w]+.?[\w]+.?[\w]+)\s?\|?\s?([\w]+)?\s?}/is');
+        parent::__construct('/{{\s?([\w\.]+)\s?\|?\s?([\w]+)?\s?}}/is');
     }
 
-    public function handle(): string
+    public function handle(array $match): string
     {
         $this->getVariable();
-        $this->replace = '<?php echo('.$this->variable.'); ?>';
+        $this->replace = '<?= '.$this->variable.' ?>';
         $this->filter('upper');
 
         return $this->replace;
@@ -62,7 +62,7 @@ class VariableTag extends Tag
     private function upper(): void
     {
         if (isset($this->match[2]) && $this->match[2] == 'capitalize') {
-            $this->replace = '<?php echo(ucwords(strtolower('.$this->variable.'))); ?>';
+            $this->replace = '<?= ucwords(strtolower('.$this->variable.')) ?>';
         }
     }
 }

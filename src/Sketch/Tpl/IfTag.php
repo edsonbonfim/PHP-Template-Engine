@@ -41,7 +41,7 @@ class IfTag extends Tag
         parent::__construct('/{\s?if (.*?)\s?([><!=])(=)?(=)?\s?(.*?)\s?}(.*?){\s?\/if\s?}/is');
     }
 
-    public function handle(): string
+    public function handle(array $match): string
     {
         $this->setIfBlock();
         $this->setIfOperator();

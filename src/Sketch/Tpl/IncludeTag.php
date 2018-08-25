@@ -14,8 +14,8 @@ class IncludeTag extends Tag
         parent::__construct('/{\s?include \'?"?(.*?)"?\'?\s?}/is');
     }
 
-    public function handle(): string
+    public function handle(array $match): string
     {
-        return file_get_contents(self::$config['template_dir'] . "/{$this->match[1]}.html");
+        return file_get_contents(self::$config['template_dir'] . "/{$match[1]}.html");
     }
 }

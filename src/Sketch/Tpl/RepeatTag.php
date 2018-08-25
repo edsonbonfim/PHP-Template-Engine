@@ -6,13 +6,29 @@ class RepeatTag extends Tag
 {
     public function __construct()
     {
-        parent::__construct('/{(\s?)+repeat (\s?)+([\d]+)(\s?)+}(.*?){(\s?)+\/repeat(\s?)+}/is');
+        parent::__construct(
+            '/{(\s?)+repeat (\s?)+([\d]+)(\s?)+(:?)(\s?)+([\w]+)?(\s?)+}(.*?){(\s?)+\/repeat(\s?)+}/is'
+        );
     }
 
-    public function handle(): string
+    public function handle(array $match): string
     {
-        $replace  = "<?php for (\$i = 0; \$i < {$this->match[3]}; \$i++) { ?>";
-        $replace .= $this->match[5];
+        static $count = 0;
+
+        if (!empty($match[5]) && empty($match[7])) {
+            throw new \Exception("Invalid tag"); // @codeCoverageIgnore
+        }
+
+        if (empty($match[5]) && !empty($match[7])) {
+            throw new \Exception("Invalid tag"); // @codeCoverageIgnore
+        }
+
+        $index = !empty($match[5]) && !empty($match[7])
+            ? $match[7]
+            : 'index' . ++$count;
+
+        $replace  = "<?php for (\$$index = 0; \$$index < $match[3]; \$$index++) { ?>";
+        $replace .= $match[9];
         $replace .= "<?php } ?>";
 
         return $replace;

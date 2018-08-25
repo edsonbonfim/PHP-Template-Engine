@@ -14,9 +14,9 @@ class VariableTest extends TestCase
 {
     public function testBasicVariable()
     {
-        $expected = '<?php echo($author->name); ?>';
+        $expected = '<?= $author->name ?>';
 
-        Tag::setContent('{author.name}');
+        Tag::setContent('{{author.name}}');
 
         new VariableTag();
 
@@ -25,9 +25,9 @@ class VariableTest extends TestCase
 
     public function testFilterUpper()
     {
-        $expected = '<?php echo(ucwords(strtolower($name))); ?>';
+        $expected = '<?= ucwords(strtolower($name)) ?>';
 
-        Tag::setContent('{name | capitalize}');
+        Tag::setContent('{{name | capitalize}}');
 
         new VariableTag();
 

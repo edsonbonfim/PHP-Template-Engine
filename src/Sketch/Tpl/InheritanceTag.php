@@ -28,6 +28,13 @@ class InheritanceTag extends Tag
         $this->extends();
     }
 
+    public function handle(array $match): string
+    {
+        $this->blocks[$match[1]] = $match[2];
+        self::$content = str_replace($this->blocks[$match[1]], '', self::$content);
+        return '';
+    }
+
     /**
      * @throws \Exception
      */
@@ -48,12 +55,5 @@ class InheritanceTag extends Tag
 
         self::$content = preg_replace('/{\s?block \'?"?[\w]+"?\'?\s?}/is', '', self::$content);
         self::$content = preg_replace('/{\s?\/block\s?}/is', '', self::$content);
-    }
-
-    public function handle(): string
-    {
-        $this->blocks[$this->match[1]] = $this->match[2];
-        self::$content = str_replace($this->blocks[$this->match[1]], '', self::$content);
-        return '';
     }
 }
