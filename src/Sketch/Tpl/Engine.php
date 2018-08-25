@@ -45,7 +45,7 @@ class Engine
     {
         try {
             $content = $this->handle(Content::getContent($view, Tag::getConfig()));
-        } catch (Exception $e) {
+        } catch (Exception $e) { // @codeCoverageIgnore
             return $e->getMessage(); // @codeCoverageIgnore
         }
 
@@ -56,7 +56,7 @@ class Engine
         $file = new File($fname);
 
         if (Tag::getConfig()['environment'] == 'production') {
-            $file->open();
+            $file->open(); // @codeCoverageIgnore
         } elseif (Tag::getConfig()['environment'] == 'development') {
             $this->setCache($file, $content);
         }
