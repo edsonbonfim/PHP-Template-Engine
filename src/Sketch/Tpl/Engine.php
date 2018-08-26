@@ -51,7 +51,13 @@ class Engine
 
         $this->data = array_merge($this->data, $data);
 
-        $fname = getcwd() . '/' . Tag::getConfig()['cache_dir'] . '/' . $view . '.phtml';
+        $dir = Tag::getConfig()['cache_dir'];
+
+        if (!is_dir($dir)) {
+            mkdir($dir);
+        }
+
+        $fname = getcwd() . '/' . $dir . '/' . md5($view) . '.phtml';
 
         $file = new File($fname);
 
