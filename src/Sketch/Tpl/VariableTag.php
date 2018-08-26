@@ -8,37 +8,35 @@ namespace Sketch\Tpl;
  */
 class VariableTag extends Tag
 {
-    
-    /**
-     * @var array
-     */
-    private $matches = [];
-    /**
-     * @var string
-     */
-    private $replace = '';
-    /**
-     * @var string
-     */
-    private $variable = '';
-
     public function __construct()
     {
-        parent::__construct('/{{\s?([\w\.]+)\s?\|?\s?([\w]+)?\s?}}/is');
+        parent::__construct('/{{(\s?)+([\w\.]+)(\s?)+\|?(\s?)+([\w|]+)?(\s?)+}}/is');
     }
 
     public function handle(array $match): string
     {
-        $this->getVariable();
-        $this->replace = '<?= '.$this->variable.' ?>';
-        $this->filter('upper');
+        $filters = explode('|', $match[5]);
 
-        return $this->replace;
+        $res = "<?= ";
+        
+        foreach ($filters as $filter) {
+            $res .= "$filter(";
+        }
+
+        $res .= $this->getVar();
+
+        foreach ($filters as $filter) {
+            $res .= ")";
+        }
+
+        $res .= " ?>";
+
+        return $res;
     }
 
-    private function getVariable(): void
+    private function getVar(): string
     {
-        $explode = explode('.', $this->match[1]);
+        $explode = explode('.', $this->match[2]);
 
         $variable = $explode[0];
 
@@ -48,21 +46,6 @@ class VariableTag extends Tag
             $variable .= "->".$explode[$k];
         }
 
-        $this->variable = $variable;
-    }
-
-    /**
-     * @param string $name
-     */
-    private function filter(string $name): void
-    {
-        $this->$name();
-    }
-
-    private function upper(): void
-    {
-        if (isset($this->match[2]) && $this->match[2] == 'capitalize') {
-            $this->replace = '<?= ucwords(strtolower('.$this->variable.')) ?>';
-        }
+        return $variable;
     }
 }
