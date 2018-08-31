@@ -2,6 +2,8 @@
 
 namespace Sketch\Tpl;
 
+use Sketch\Tpl\Tag\Tag;
+
 use Exception;
 
 /**
@@ -71,7 +73,7 @@ class Engine
 
         $file->close();
 
-        return $content;
+        return trim($content);
     }
 
     /**
@@ -84,13 +86,13 @@ class Engine
 
         $this->registerTag([
             'Inheritance',
-            'Include',
-            'Loop',
-            'Repeat',
-            'If',
+            'IncludeTag',
+            'Statement',
+            'Evaluate',
             'Func',
-            'Eval',
-            'Variable'
+            'Loop',
+            'Condition',
+            'Block'
         ]);
 
         return Tag::getContent();
@@ -112,7 +114,7 @@ class Engine
     private function registerTag(array $tags): void
     {
         foreach ($tags as $tag) {
-            $tag = "\\Sketch\Tpl\\" . ucfirst($tag) . "Tag";
+            $tag = "\Sketch\Tpl\Tag\\" . ucfirst($tag);
             new $tag;
         }
     }
