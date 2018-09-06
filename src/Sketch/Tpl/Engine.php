@@ -86,13 +86,14 @@ class Engine
 
         $this->registerTag([
             'Inheritance',
+            'Block',
             'IncludeTag',
+            'Buttons',
             'Statement',
             'Evaluate',
             'Func',
             'Loop',
             'Condition',
-            'Block'
         ]);
 
         return Tag::getContent();

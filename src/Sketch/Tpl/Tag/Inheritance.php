@@ -12,11 +12,11 @@ class Inheritance extends Tag
 
     private function getBlockContent(): void
     {
-        $search = "/{(\s?)+extends.*}.*{(\s?)+([\w]+)(\s?)+}/is";
+        $search = "/{(\s?)+extends.*}.*{(\s?)+blk(\s?)+([\w]+)(\s?)+}/is";
 
         Tag::match($search, function($blockName) {
 
-            $search = "/{(\s?)+$blockName(\s?)+}(.*?){(\s?)+\/$blockName(\s?)+}/is";
+            $search = "/{(\s?)+blk(\s?)+$blockName(\s?)+}(.*?){(\s?)+\/blk(\s?)+}/is";
 
             Tag::match($search, function($content) use ($blockName) {
 

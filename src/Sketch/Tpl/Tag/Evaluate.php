@@ -25,7 +25,7 @@ class Evaluate extends Tag
 
     private function eval2(): void
     {
-        $search = "/{{(\s?)+([\w\.]+)(\s?)+\|(\s?)+([\w|]+)(\s?)+}}/is";
+        $search = "/{{(\s?)+([\w\.]+)(\s?)+\|(\s?)+([\w| ]+)(\s?)+}}/is";
 
         Tag::match($search, function($var, $filter) {
 

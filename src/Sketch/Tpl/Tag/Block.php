@@ -14,7 +14,7 @@ class Block extends Tag
     {
         foreach (Tag::$blocks as $blockName => $blockContent) {
 
-            $search = "/{(\s?)+{$blockName}(\s?)+}.*?{(\s?)+\/{$blockName}(\s?)+}/is";
+            $search = "/{(\s?)+blk(\s?)+{$blockName}(\s?)+}.*?{(\s?)+\/blk(\s?)+}/is";
 
             Tag::match($search, function() use ($blockContent) {
                 Tag::replace($blockContent);
@@ -25,7 +25,7 @@ class Block extends Tag
 
     private function default()
     {
-        $search = "/{(\s?)+[\w]+(\s?)+}(.*?){(\s?+)\/[\w]+(\s?)+}/is";
+        $search = "/{(\s?)+blk(\s?)+[\w]+(\s?)+}(.*?){(\s?+)\/blk+(\s?)+}/is";
 
         Tag::match($search, function($content = '') {
             Tag::replace($content);
