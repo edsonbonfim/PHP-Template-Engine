@@ -88,7 +88,6 @@ class Engine
             'Inheritance',
             'Block',
             'IncludeTag',
-            'Buttons',
             'Statement',
             'Evaluate',
             'Func',
