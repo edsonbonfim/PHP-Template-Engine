@@ -1,3 +1,13 @@
+PHP-Template-Engine
+===================
+
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Software License][ico-license]](LICENSE.md)
+[![Build Status][ico-travis]][link-travis]
+[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
+[![Quality Score][ico-code-quality]][link-code-quality]
+[![Total Downloads][ico-downloads]][link-downloads]
+
 Table of Contents
 -----------------
 
@@ -23,10 +33,8 @@ Prerequisites
 Installation
 ------------
 
-Require via [composer](https://getcomposer.org/download/)
-
-``` sh
-$ composer require sketchphp/sketch:^2.1
+``` bash
+$ composer require EdsonOnildoJR/PHP-Template-Engine
 ```
 
 Basic usage
@@ -208,3 +216,45 @@ With **{include 'template'}** tag you can include external template as blocks.
     ...
 </form>
 ```
+
+## Change log
+
+Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+
+## Testing
+
+``` bash
+$ composer test
+```
+
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) and [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md) for details.
+
+## Security
+
+If you discover any security related issues, please email inbox.edsononildo@gmail.com instead of using the issue tracker.
+
+## Credits
+
+- [Edson Onildo][link-author]
+- [All Contributors][link-contributors]
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+[ico-version]: https://img.shields.io/packagist/v/EdsonOnildoJR/PHP-Template-Engine.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/EdsonOnildoJR/PHP-Template-Engine/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/EdsonOnildoJR/PHP-Template-Engine.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/EdsonOnildoJR/PHP-Template-Engine.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/EdsonOnildoJR/PHP-Template-Engine.svg?style=flat-square
+
+[link-packagist]: https://packagist.org/packages/EdsonOnildoJR/PHP-Template-Engine
+[link-travis]: https://travis-ci.org/EdsonOnildoJR/PHP-Template-Engine
+[link-scrutinizer]: https://scrutinizer-ci.com/g/EdsonOnildoJR/PHP-Template-Engine/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/EdsonOnildoJR/PHP-Template-Engine
+[link-downloads]: https://packagist.org/packages/EdsonOnildoJR/PHP-Template-Engine
+[link-author]: https://github.com/EdsonOnildoJR
+[link-contributors]: ../../contributors
