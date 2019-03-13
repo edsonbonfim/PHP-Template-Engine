@@ -249,12 +249,12 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-travis]: https://img.shields.io/travis/EdsonOnildoJR/PHP-Template-Engine/master.svg?style=flat-square
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/EdsonOnildoJR/PHP-Template-Engine.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/EdsonOnildoJR/PHP-Template-Engine.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/EdsonOnildoJR/PHP-Template-Engine.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/edsononildo/tpl.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/edsononildo/tpl
 [link-travis]: https://travis-ci.org/EdsonOnildoJR/PHP-Template-Engine
 [link-scrutinizer]: https://scrutinizer-ci.com/g/EdsonOnildoJR/PHP-Template-Engine/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/EdsonOnildoJR/PHP-Template-Engine
-[link-downloads]: https://packagist.org/packages/EdsonOnildoJR/PHP-Template-Engine
+[link-downloads]: https://packagist.org/packages/edsononildo/tpl
 [link-author]: https://github.com/EdsonOnildoJR
 [link-contributors]: ../../contributors
