@@ -244,7 +244,7 @@ If you discover any security related issues, please email inbox.edsononildo@gmai
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/EdsonOnildoJR/PHP-Template-Engine.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/edsononildo/tpl.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/EdsonOnildoJR/PHP-Template-Engine/master.svg?style=flat-square
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/EdsonOnildoJR/PHP-Template-Engine.svg?style=flat-square
