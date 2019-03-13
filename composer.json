@@ -1,9 +1,9 @@
 {
-    "name": "EdsonOnildoJR/PHP-Template-Engine",
+    "name": "edsononildo/tpl",
     "type": "library",
     "description": "Gerenciador de Templates PHP",
     "keywords": [
-        "EdsonOnildoJR",
+        "EdsonOnildo",
         "PHP-Template-Engine"
     ],
     "homepage": "https://github.com/EdsonOnildoJR/PHP-Template-Engine",
@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "EdsonOnildoJR\\Tpl\\": "src"
+            "EdsonOnildo\\Tpl\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "EdsonOnildoJR\\Tpl\\": "tests"
+            "EdsonOnildo\\Tpl\\": "tests"
         }
     },
     "scripts": {
