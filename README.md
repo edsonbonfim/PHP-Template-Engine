@@ -251,7 +251,7 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/EdsonOnildoJR/PHP-Template-Engine.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/EdsonOnildoJR/PHP-Template-Engine.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/EdsonOnildoJR/PHP-Template-Engine
+[link-packagist]: https://packagist.org/packages/edsononildo/tpl
 [link-travis]: https://travis-ci.org/EdsonOnildoJR/PHP-Template-Engine
 [link-scrutinizer]: https://scrutinizer-ci.com/g/EdsonOnildoJR/PHP-Template-Engine/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/EdsonOnildoJR/PHP-Template-Engine
