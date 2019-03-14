@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title><?= $title ?></title>
+    </head>
+    <body>
+        <header>
+            <h1><?= $title ?></h1>
+        </header>
+
+        <main>
+            
+    <?php if ($status === true) { ?>
+        Verdadeiro
+    <?php } else { ?>
+        Falso
+    <?php } ?>
+
+
+            <h1>Credits</h1>
+<ul>
+    <?php foreach ($authors as $author) { ?>
+        <li><a href="<?= $author->page ?>"><?= $author->name ?></a></li>
+    <?php } ?>
+</ul>
+
+        </main>
+
+        <footer>
+            <?= date('Y') ?> PHP-Template-Engine
+        </footer>
+    </body>
+</html>
+
+
