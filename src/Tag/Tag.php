@@ -1,6 +1,6 @@
 <?php
 
-namespace Sketch\View\Tpl\Tag;
+namespace EdsonOnildo\Tpl\Tag;
 
 abstract class Tag
 {

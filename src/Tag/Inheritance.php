@@ -1,6 +1,6 @@
 <?php
 
-namespace Sketch\View\Tpl\Tag;
+namespace EdsonOnildo\Tpl\Tag;
 
 class Inheritance extends Tag
 {
@@ -39,7 +39,7 @@ class Inheritance extends Tag
 
             $layoutName = str_replace('.', '/', $layoutName);
 
-            $content = \Sketch\View\Tpl\Content::getContent($layoutName, Tag::$config);
+            $content = \EdsonOnildo\Tpl\Content::getContent($layoutName, Tag::$config);
           
             Tag::replace($content);
             

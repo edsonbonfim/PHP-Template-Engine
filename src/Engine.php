@@ -1,29 +1,17 @@
 <?php
 
-namespace Sketch\View\Tpl;
+namespace EdsonOnildo\Tpl;
 
-use Sketch\View\Tpl\Tag\Tag;
-
+use EdsonOnildo\Tpl\Tag\Tag;
 use Exception;
 
-/**
- * Class Engine
- * @package Sketch\Tpl
- */
 class Engine
 {
-    /**
-     * @var array
-     */
     private $data = [];
 
-    /**
-     * @param array $config
-     * @throws Exception
-     */
     public function config($config): void
     {
-        $expected = ['environment', 'template_dir', 'cache_dir'];
+        $expected = ['dev', 'template_dir', 'cache_dir'];
 
         foreach ($expected as $exp) {
             if (count($config) == 3) {
@@ -38,11 +26,6 @@ class Engine
         Tag::setConfig($config);
     }
 
-    /**
-     * @param string $view
-     * @param array $data
-     * @return string
-     */
     public function render(string $view, array $data = []): string
     {
         try {
@@ -67,9 +50,9 @@ class Engine
 
         $file = new File($fname);
 
-        if (Tag::getConfig()['environment'] == 'production') {
+        if (Tag::getConfig()['dev'] == 'production') {
             $file->open(); // @codeCoverageIgnore
-        } elseif (Tag::getConfig()['environment'] == 'development') {
+        } elseif (Tag::getConfig()['dev'] == 'development') {
             $this->setCache($file, $content);
         }
 
@@ -80,10 +63,6 @@ class Engine
         return trim($content);
     }
 
-    /**
-     * @param $content
-     * @return string
-     */
     private function handle($content)
     {
         Tag::setContent($content);
@@ -102,23 +81,16 @@ class Engine
         return Tag::getContent();
     }
 
-    /**
-     * @param File $file
-     * @param $content
-     */
     private function setCache(File $file, $content): void
     {
         $file->create();
         $file->write($content);
     }
 
-    /**
-     * @param array $tags
-     */
     private function registerTag(array $tags): void
     {
         foreach ($tags as $tag) {
-            $tag = "\Sketch\View\Tpl\Tag\\" . ucfirst($tag);
+            $tag = "\EdsonOnildo\Tpl\Tag\\" . ucfirst($tag);
             new $tag;
         }
     }
