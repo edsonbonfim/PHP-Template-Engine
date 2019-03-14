@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../PHP-Framework-App" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../PHP-Framework-Core" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/vendor/edsononildo/router" vcs="Git" />
   </component>

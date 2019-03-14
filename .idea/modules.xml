@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../PHP-Framework-App/.idea/PHP-Framework-App.iml" filepath="$PROJECT_DIR$/../PHP-Framework-App/.idea/PHP-Framework-App.iml" />
       <module fileurl="file://$PROJECT_DIR$/../PHP-Framework-Core/.idea/PHP-Framework-Core.iml" filepath="$PROJECT_DIR$/../PHP-Framework-Core/.idea/PHP-Framework-Core.iml" />
       <module fileurl="file://$PROJECT_DIR$/../PHP-Http-Router/.idea/PHP-Http-Router.iml" filepath="$PROJECT_DIR$/../PHP-Http-Router/.idea/PHP-Http-Router.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/PHP-Template-Engine.iml" filepath="$PROJECT_DIR$/.idea/PHP-Template-Engine.iml" />

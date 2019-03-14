@@ -40,5 +40,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="PHP-Http-Router" />
     <orderEntry type="module" module-name="PHP-Framework-Core" />
+    <orderEntry type="module" module-name="PHP-Framework-App" />
   </component>
 </module>
