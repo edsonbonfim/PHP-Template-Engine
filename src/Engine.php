@@ -11,10 +11,10 @@ class Engine
 
     public function config($config): void
     {
-        $expected = ['dev', 'template_dir', 'cache_dir'];
+        $expected = ['dev', 'template_dir'];
 
         foreach ($expected as $exp) {
-            if (count($config) == 3) {
+            if (count($config) == 2) {
                 if (!array_key_exists($exp, $config)) {
                     throw new Exception("The $exp configuration is expected");
                 }
@@ -40,21 +40,17 @@ class Engine
             $this->data['page'] = $_SERVER['REQUEST_URI'];
         }
 
-        $dir = Tag::getConfig()['cache_dir'];
+        $dir = Tag::getConfig()['template_dir'] . '.cache/';
 
         if (!is_dir($dir)) {
             mkdir($dir);
         }
 
-        $fname = getcwd() . '/' . $dir . '/' . md5($view) . '.phtml';
+        $fname = $dir . md5($view) . '.phtml';
 
         $file = new File($fname);
 
-        if (Tag::getConfig()['dev'] == 'production') {
-            $file->open(); // @codeCoverageIgnore
-        } elseif (Tag::getConfig()['dev'] == 'development') {
-            $this->setCache($file, $content);
-        }
+        $this->setCache($file, $content);
 
         $content = $file->read($this->data);
 
