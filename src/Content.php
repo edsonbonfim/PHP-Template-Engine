@@ -6,7 +6,7 @@ class Content
 {
     public static function getContent(string $view, array $config): string
     {
-        $file = getcwd() . '/' . $config['template_dir'] . "/$view.html";
+        $file = $config['template_dir'] . "$view.html";
 
         if (!file_exists($file)) {
             throw new \Exception("$file template not found"); // @codeCoverageIgnore
