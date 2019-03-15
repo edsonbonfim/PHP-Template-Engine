@@ -6,6 +6,7 @@ class Content
 {
     public static function getContent(string $view, array $config): string
     {
+        $view = str_replace('.', '/', $view);
         $file = $config['template_dir'] . "$view.html";
 
         if (!file_exists($file)) {
