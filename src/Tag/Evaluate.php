@@ -8,10 +8,10 @@ class Evaluate extends Tag
 {
     public function __construct()
     {
+        $this->eval3();
         $this->eval0();
         $this->eval1();
         $this->eval2();
-        $this->eval3();
         $this->expression();
         $this->eval4();
     }
@@ -80,7 +80,7 @@ class Evaluate extends Tag
     {
         $search = "/{{(\s?)+([\w]+)(\s?)+\((.*?)\)(\s?)+}}/is";
 
-        Tag::match($search, function($func, $params) {
+        Tag::match($search, function($func, $params = '') {
 
             if (method_exists(__CLASS__, $func)) {
                 $func = __CLASS__ . "::$func";
