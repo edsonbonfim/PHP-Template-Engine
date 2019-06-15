@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title><?= $title ?></title>
+
+        <?= EdsonOnildo\Tpl\Tag\Evaluate::style('style.css') ?>
     </head>
     <body>
         <header>
@@ -11,13 +13,11 @@
 
         <main>
             
-    <?php if ($status === true) { ?>
+    <?php if ($status) { ?>
         Verdadeiro
-    <?php } else { ?>
-        Falso
     <?php } ?>
 
-
+            
             <h1>Credits</h1>
 <ul>
     <?php foreach ($authors as $author) { ?>
@@ -30,6 +30,8 @@
         <footer>
             <?= date('Y') ?> PHP-Template-Engine
         </footer>
+        
+        <?= EdsonOnildo\Tpl\Tag\Evaluate::script('script.js') ?>
     </body>
 </html>
 

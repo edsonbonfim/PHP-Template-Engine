@@ -13,11 +13,6 @@ class Content
             throw new \Exception("$file template not found"); // @codeCoverageIgnore
         }
 
-        return self::removeTags(file_get_contents($file));
-    }
-
-    public static function removeTags($content)
-    {
-        return str_replace(array("<?", "?>"), array("&lt;?", "?&gt;"), $content);
+        return file_get_contents($file);
     }
 }

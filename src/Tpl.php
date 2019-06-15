@@ -9,6 +9,7 @@ class Tpl
 
     private static $dev = false;
     private static $dir = 'view/';
+    private static $url = 'http://localhost/';
 
     private static function engine(): Engine
     {
@@ -31,6 +32,16 @@ class Tpl
     public static function getDir(): String
     {
         return self::$dir;
+    }
+
+    public static function setUrl(String $url): void
+    {
+        self::$url = $url;
+    }
+
+    public static function getUrl(): String
+    {
+        return self::$url;
     }
 
     public static function config(array $config): void

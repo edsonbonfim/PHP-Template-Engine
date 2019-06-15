@@ -2,6 +2,8 @@
 
 namespace EdsonOnildo\Tpl\Tag;
 
+use EdsonOnildo\Tpl\Tpl;
+
 class Evaluate extends Tag
 {
     public function __construct()
@@ -57,7 +59,21 @@ class Evaluate extends Tag
 
         Tag::match($search, function($func, $params) {
 
+            if (method_exists(__CLASS__, $func)) {
+                $func = __CLASS__ . "::$func";
+            }
+
             Tag::replace("<?= $func($params) ?>");
         });
+    }
+
+    public static function style(String $asset): String
+    {
+        return '<link rel="stylesheet" href="'.Tpl::getUrl().'assets/css/'.$asset.'">';
+    }
+
+    public static function script(String $asset): String
+    {
+        return '<script src="'.Tpl::getUrl().'assets/js/'.$asset.'"></script>';
     }
 }

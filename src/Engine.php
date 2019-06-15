@@ -51,7 +51,7 @@ class Engine
             'IncludeTag',
 //            'Statement',
             'Evaluate',
-            'Func',
+            // 'Func',
             'Loop',
             'Condition',
         ]);
