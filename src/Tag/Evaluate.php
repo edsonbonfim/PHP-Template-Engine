@@ -8,14 +8,36 @@ class Evaluate extends Tag
 {
     public function __construct()
     {
+        $this->eval0();
         $this->eval1();
         $this->eval2();
         $this->eval3();
+        $this->eval4();
+    }
+
+    private function eval0(): void
+    {
+        $search = "/\@{{(\s?)+([\w\.\(\)]+)(\s?)+}}/is";
+
+        Tag::match($search, function($var) {
+
+            Tag::replace("@@ $var @@");
+        });
+    }
+
+    private function eval4(): void
+    {
+        $search = "/\@\@(\s?)+([\w\.\(\)]+)(\s?)+\@\@/is";
+
+        Tag::match($search, function($var) {
+
+            Tag::replace("{{ $var }}");
+        });
     }
 
     private function eval1(): void
     {
-        $search = "/\@{{(\s?)+([\w\.\(\)]+)(\s?)+}}/is";
+        $search = "/{{(\s?)+([\w\.\(\)]+)(\s?)+}}/is";
 
         Tag::match($search, function($var) {
 
@@ -27,7 +49,7 @@ class Evaluate extends Tag
 
     private function eval2(): void
     {
-        $search = "/\@{{(\s?)+([\w\.\(\)]+)(\s?)+\|(\s?)+([\w| ]+)(\s?)+}}/is";
+        $search = "/{{(\s?)+([\w\.\(\)]+)(\s?)+\|(\s?)+([\w| ]+)(\s?)+}}/is";
 
         Tag::match($search, function($var, $filter) {
 
@@ -55,7 +77,7 @@ class Evaluate extends Tag
 
     private function eval3(): void
     {
-        $search = "/\@{{(\s?)+([\w]+)(\s?)+\((.*?)\)(\s?)+}}/is";
+        $search = "/{{(\s?)+([\w]+)(\s?)+\((.*?)\)(\s?)+}}/is";
 
         Tag::match($search, function($func, $params) {
 

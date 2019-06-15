@@ -55,8 +55,6 @@ class Tpl
         return self::$assets;
     }
 
-
-
     public static function config(array $config): void
     {
         self::engine()->config($config);

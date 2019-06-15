@@ -5,6 +5,7 @@
         <title>{{ title }}</title>
 
         {{ style('style.css') }}
+        <script src="{{ assets('css/test.css') }}"></script>
     </head>
     <body>
         <header>

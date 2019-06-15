@@ -11,6 +11,7 @@ use EdsonOnildo\Tpl\Tpl;
 Tpl::setDev(true);
 Tpl::setDir('view/');
 Tpl::setUrl('http://localhost:3000/');
+Tpl::setAssets('');
 
 Tpl::assign('status', true);
 Tpl::assign('title', 'Sketch');
