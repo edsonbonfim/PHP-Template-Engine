@@ -14,7 +14,7 @@ class IncludeTag extends Tag
 
             $template = str_replace('.', '/', $template);
 
-            $content = file_get_contents(Tpl::getDir() . "$template.html");
+            $content = file_get_contents(Tpl::getDir() . "$template.php");
 
             Tag::replace($content);
         });
