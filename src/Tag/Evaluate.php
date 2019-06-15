@@ -69,11 +69,16 @@ class Evaluate extends Tag
 
     public static function style(String $asset): String
     {
-        return '<link rel="stylesheet" href="'.Tpl::getUrl().'assets/css/'.$asset.'">';
+        return '<link rel="stylesheet" href="'.Tpl::getUrl().Tpl::getAssets().$asset.'">';
     }
 
     public static function script(String $asset): String
     {
-        return '<script src="'.Tpl::getUrl().'assets/js/'.$asset.'"></script>';
+        return '<script src="'.Tpl::getUrl().Tpl::getAssets().$asset.'"></script>';
+    }
+
+    public static function assets(String $asset): String
+    {
+        return Tpl::getUrl() . Tpl::getAssets() . $asset;
     }
 }

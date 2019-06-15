@@ -10,6 +10,7 @@ class Tpl
     private static $dev = false;
     private static $dir = 'view/';
     private static $url = 'http://localhost/';
+    private static $assets = 'assets/';
 
     private static function engine(): Engine
     {
@@ -43,6 +44,18 @@ class Tpl
     {
         return self::$url;
     }
+
+    public static function setAssets(String $assets)
+    {
+        self::$assets = $assets;
+    }
+
+    public static function getAssets(): String
+    {
+        return self::$assets;
+    }
+
+
 
     public static function config(array $config): void
     {
