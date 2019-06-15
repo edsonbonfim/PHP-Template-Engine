@@ -12,6 +12,7 @@ class Evaluate extends Tag
         $this->eval1();
         $this->eval2();
         $this->eval3();
+        $this->expression();
         $this->eval4();
     }
 
@@ -89,6 +90,13 @@ class Evaluate extends Tag
         });
     }
 
+    private function expression(): void
+    {
+        Tag::match("/{{(\s?)+(.*?)(\s?)+}}/is", function($expr) {
+            Tag::replace("<?= $expr ?>");
+        });
+    }
+
     public static function style(String $asset): String
     {
         return '<link rel="stylesheet" href="'.Tpl::getUrl().Tpl::getAssets().$asset.'">';
@@ -102,5 +110,10 @@ class Evaluate extends Tag
     public static function assets(String $asset): String
     {
         return Tpl::getUrl() . Tpl::getAssets() . $asset;
+    }
+
+    public static function url(String $url): String
+    {
+        return Tpl::getUrl();
     }
 }
