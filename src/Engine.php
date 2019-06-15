@@ -3,33 +3,15 @@
 namespace EdsonOnildo\Tpl;
 
 use EdsonOnildo\Tpl\Tag\Tag;
-use Exception;
 
 class Engine
 {
     private $data = [];
 
-    public function config($config): void
-    {
-        $expected = ['dev', 'template_dir'];
-
-        foreach ($expected as $exp) {
-            if (count($config) == 2) {
-                if (!array_key_exists($exp, $config)) {
-                    throw new Exception("The $exp configuration is expected");
-                }
-            } else {
-                throw new Exception("The configuration expected only tree arguments");
-            }
-        }
-
-        Tag::setConfig($config);
-    }
-
     public function render(string $view, array $data = []): string
     {
         try {
-            $content = $this->handle(Content::getContent($view, Tag::getConfig()));
+            $content = $this->handle(Content::getContent($view));
         } catch (Exception $e) { // @codeCoverageIgnore
             return $e->getMessage(); // @codeCoverageIgnore
         }
@@ -40,7 +22,7 @@ class Engine
             $this->data['page'] = $_SERVER['REQUEST_URI'];
         }
 
-        $dir = Tag::getConfig()['template_dir'] . '.cache/';
+        $dir = Tpl::getDir() . '.cache/';
 
         if (!is_dir($dir)) {
             mkdir($dir);

@@ -5,7 +5,6 @@ namespace EdsonOnildo\Tpl\Tag;
 abstract class Tag
 {
     protected static $blocks = [];
-    protected static $config;
     
     private static $content;
 
@@ -43,10 +42,5 @@ abstract class Tag
     public static function setConfig(array $config): void
     {
         self::$config = $config;
-    }
-
-    public static function getConfig(): array
-    {
-        return self::$config;
     }
 }

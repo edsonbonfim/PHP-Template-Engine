@@ -2,6 +2,8 @@
 
 namespace EdsonOnildo\Tpl\Tag;
 
+use EdsonOnildo\Tpl\Tpl;
+
 class IncludeTag extends Tag
 {
     public function __construct()
@@ -12,8 +14,7 @@ class IncludeTag extends Tag
 
             $template = str_replace('.', '/', $template);
 
-            $path    = self::$config['template_dir'];
-            $content = file_get_contents("$path/$template.html");
+            $content = file_get_contents(Tpl::getDir() . "$template.html");
 
             Tag::replace($content);
         });

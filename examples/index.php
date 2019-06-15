@@ -1,14 +1,15 @@
 <?php
 
+ini_set('display_errors',1);
+ini_set('display_startup_erros',1);
+error_reporting(E_ALL);
+
 include '../vendor/autoload.php';
 
 use EdsonOnildo\Tpl\Tpl;
 
-Tpl::config([
-    'dev' => true,
-    'template_dir' => 'view',
-    'cache_dir' => 'cache'
-]);
+Tpl::setDev(true);
+Tpl::setDir('view/');
 
 Tpl::assign('status', true);
 Tpl::assign('title', 'Sketch');

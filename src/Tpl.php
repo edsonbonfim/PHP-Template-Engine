@@ -7,12 +7,30 @@ class Tpl
     private static $assign = [];
     private static $engine = null;
 
+    private static $dev = false;
+    private static $dir = 'view/';
+
     private static function engine(): Engine
     {
         if (!isset(self::$engine) || is_null(self::$engine)) {
             self::$engine = new Engine;
         }
         return self::$engine;
+    }
+
+    public static function setDev(bool $dev): void
+    {
+        self::$dev = $dev;
+    }
+
+    public static function setDir(String $dir): void
+    {
+        self::$dir = $dir;
+    }
+
+    public static function getDir(): String
+    {
+        return self::$dir;
     }
 
     public static function config(array $config): void

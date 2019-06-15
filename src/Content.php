@@ -4,10 +4,10 @@ namespace EdsonOnildo\Tpl;
 
 class Content
 {
-    public static function getContent(string $view, array $config): string
+    public static function getContent(string $view): string
     {
         $view = str_replace('.', '/', $view);
-        $file = $config['template_dir'] . "$view.html";
+        $file = Tpl::getDir() . "$view.html";
 
         if (!file_exists($file)) {
             throw new \Exception("$file template not found"); // @codeCoverageIgnore
