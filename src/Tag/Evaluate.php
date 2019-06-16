@@ -112,8 +112,8 @@ class Evaluate extends Tag
         return Tpl::getUrl() . Tpl::getAssets() . $asset;
     }
 
-    public static function url(): String
+    public static function url(String $url = ''): String
     {
-        return Tpl::getUrl();
+        return Tpl::getUrl() . $url;
     }
 }

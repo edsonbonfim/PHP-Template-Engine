@@ -68,8 +68,12 @@ class Tpl
         self::$assign[$key] = $value;
     }
 
-    public static function render(string $template): void
+    public static function render(string $template, array $values = []): void
     {
+        foreach ($values as $key => $value) {
+            self::assign($key, $value);
+        }
+
         echo self::engine()->render($template, self::$assign);
     }
 }

@@ -13,9 +13,9 @@ Tpl::setDir('view/');
 Tpl::setUrl('http://localhost:3000/');
 Tpl::setAssets('');
 
-Tpl::assign('status', true);
-Tpl::assign('title', 'Sketch');
-Tpl::assign('authors', [
+$status = true;
+$title = 'Sketch';
+$authors = [
     [
         "name"     => "Edson Onildo",
         "page" => "https://github.com/EdsonOnildoJR",
@@ -24,6 +24,6 @@ Tpl::assign('authors', [
         "name"     => "All Contributors",
         "page" => "https://github.com/EdsonOnildoJR/Sketch/contributors",
     ]
-]);
+];
 
-Tpl::render('index');
+Tpl::render('index', compact('status', 'title', 'authors'));
