@@ -1,8 +1,8 @@
 <?php
 
-namespace EdsonOnildo\Tpl;
+namespace Bonfim\Tpl;
 
-use EdsonOnildo\Tpl\Tag\Tag;
+use Bonfim\Tpl\Tag\Tag;
 
 class Engine
 {

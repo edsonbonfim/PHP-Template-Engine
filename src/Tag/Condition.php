@@ -1,6 +1,6 @@
 <?php
 
-namespace EdsonOnildo\Tpl\Tag;
+namespace Bonfim\Tpl\Tag;
 
 class Condition extends Tag
 {

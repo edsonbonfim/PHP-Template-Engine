@@ -1,8 +1,8 @@
 <?php
 
-namespace EdsonOnildo\Tpl\Tag;
+namespace Bonfim\Tpl\Tag;
 
-use EdsonOnildo\Tpl\Tpl;
+use Bonfim\Tpl\Tpl;
 
 class IncludeTag extends Tag
 {

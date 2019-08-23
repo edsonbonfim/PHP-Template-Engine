@@ -1,6 +1,6 @@
 <?php
 
-namespace EdsonOnildo\Tpl;
+namespace Bonfim\Tpl;
 
 class Content
 {

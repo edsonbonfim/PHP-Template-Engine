@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "EdsonOnildo\\Tpl\\": "src"
+            "Bonfim\\Tpl\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "EdsonOnildo\\Tpl\\": "tests"
+            "Bonfim\\Tpl\\": "tests"
         }
     },
     "scripts": {
