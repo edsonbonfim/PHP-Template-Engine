@@ -8,7 +8,12 @@ class Evaluate extends Tag
     {
         self::match('/([^@]){{(.*?)}}/', function ($scape, $cond) {
 
-            self::replace("<?= {$scape}{$cond} ?>");
+            self::replace("$scape<?= $cond ?>");
+        });
+
+        self::match('/@{{/', function () {
+
+            self::replace("{{");
         });
     }
 }

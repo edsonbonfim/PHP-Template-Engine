@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 include '../vendor/autoload.php';
 
-use EdsonOnildo\Tpl\Tpl;
+use Bonfim\Tpl\Tpl;
 
 Tpl::setDev(true);
 Tpl::setDir('view/');
@@ -26,6 +26,6 @@ $authors = [
     ]
 ];
 
-Tpl::render('index', compact('status', 'title', 'authors'));
+//Tpl::render('index', compact('status', 'title', 'authors'));
 
-//Tpl::render('test');
+Tpl::render('test');
