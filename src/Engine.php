@@ -69,7 +69,7 @@ class Engine
     private function registerTag(array $tags): void
     {
         foreach ($tags as $tag) {
-            $tag = "\EdsonOnildo\Tpl\Tag\\" . ucfirst($tag);
+            $tag = "\Bonfim\Tpl\Tag\\" . ucfirst($tag);
             new $tag;
         }
     }
