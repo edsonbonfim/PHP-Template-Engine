@@ -39,7 +39,7 @@ class Inheritance extends Tag
 
             $layoutName = str_replace('.', '/', $layoutName);
 
-            $content = \EdsonOnildo\Tpl\Content::getContent($layoutName);
+            $content = \Bonfim\Tpl\Content::getContent($layoutName);
           
             Tag::replace($content);
             
