@@ -27,3 +27,5 @@ $authors = [
 ];
 
 Tpl::render('index', compact('status', 'title', 'authors'));
+
+//Tpl::render('test');

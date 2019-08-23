@@ -6,78 +6,42 @@ class Loop extends Tag
 {
     public function __construct()
     {
-        $this->for1();
-        $this->for2();
+        $this->foreach();
+        $this->endforeach();
 
-        $this->repeat1();
-        $this->repeat2();
+        $this->for();
+        $this->endfor();
     }
 
-    private function for1()
+    private function for()
     {
-        $search = "/@(\s?)+loop(\s?)+([\w]+)(\s?)+:(\s?)+([\w\.]+)(.*?)@(\s?)+endloop/is";
+        self::match('/@\s*for\s*\((.*?)\)/', function ($cond) {
 
-        Tag::match($search, function($right, $left, $content = "") {
-            
-            $left = str_replace('.', '->', $left);
-
-            $res  = "<?php foreach ($$left as $$right) { ?>";
-            $res .= $content;
-            $res .= "<?php } ?>";
-
-            Tag::replace($res);
-
-            $this->for1();
+            self::replace("<?php for ($cond) : ?>");
         });
     }
 
-    private function for2()
+    private function endfor()
     {
-        $search = "/{(\s?)+for(\s?)+([\$\w]+)(\s?)+=>(\s?)+([\$\w]+)(\s?)+:(\s?)+([\$\w]+)(\s?)+}(.*?){(\s?)+\/for(\s?)+}/is";
+        self::match('/@\s*\/for/', function () {
 
-        Tag::match($search, function($key, $value, $left, $content = "") {
-            
-            $res  = "<?php foreach ($left as $key => $value) { ?>";
-            $res .= $content;
-            $res .= "<?php } ?>";
-
-            Tag::replace($res);
-
-            $this->for2();
+            self::replace("<?php endfor ?>");
         });
     }
 
-    private function repeat1(): void
+    private function foreach()
     {
-        $search = "/{(\s?)+repeat (\s?)+([\d]+)(\s?)+}(.*?){(\s?)+\/repeat(\s?)+}/is";
+        self::match('/@\s*foreach\s*\((.*?)\)/', function ($cond) {
 
-        Tag::match($search, function($times, $content) {
-
-            $var = "v".md5(microtime());
-
-            $replace  = "<?php for (\$$var = 0; \$$var < $times; \$$var++) { ?>";
-            $replace .= $content;
-            $replace .= "<?php } ?>";
-            
-            Tag::replace($replace);
-
-            $this->repeat1();
+            self::replace("<?php foreach ($cond) : ?>");
         });
     }
 
-    private function repeat2(): void
+    private function endforeach()
     {
-        $search = "/{(\s?)+repeat (\s?)+([\d]+)(\s?)+:(\s?)+([\w]+)(\s?)+}(.*?){(\s?)+\/repeat(\s?)+}/is";
+        self::match('/@\s*\/foreach/', function () {
 
-        Tag::match($search, function($times, $var, $content) {
-            
-            $replace  = "<?php for (\$$var = 0; \$$var < $times; \$$var++) { ?>";
-            $replace .= $content;
-            $replace .= "<?php } ?>";
-            
-            Tag::replace($replace);
-
-            $this->repeat2();
+            self::replace("<?php endforeach ?>");
         });
     }
 }

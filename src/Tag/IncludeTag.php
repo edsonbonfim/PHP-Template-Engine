@@ -8,13 +8,11 @@ class IncludeTag extends Tag
 {
     public function __construct()
     {
-        $search = "/@(\s?)+include(\s?)+([\w\.]+)/is";
+        Tag::match('/@\s*include\s*\(\s*[\'"](.*?)[\'"]\s*\)/', function($file) {
 
-        Tag::match($search, function($template) {
+            $template = str_replace('.', '/', $file);
 
-            $template = str_replace('.', '/', $template);
-
-            $content = file_get_contents(Tpl::getDir() . "$template.php");
+            $content = file_get_contents(Tpl::getDir() . "$file.php");
 
             Tag::replace($content);
         });

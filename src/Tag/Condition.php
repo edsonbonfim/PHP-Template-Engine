@@ -6,87 +6,42 @@ class Condition extends Tag
 {
     public function __construct()
     {
+        $this->if();
         $this->elseif();
         $this->else();
-        $this->if();
-        $this->if2();
+        $this->endif();
     }
 
-    private function config(&$left, &$right)
+    public function if()
     {
-        $left  = str_replace('.', '->', trim($left));
-        $right = str_replace('.', '->', trim($right));
+        self::match('/@\s*if\s*\((.*?)\)/', function($cond) {
 
-        if ($left[0] != '"' && $left[0] != "'" && !is_numeric($left[0]) && $left != 'false' && $left != 'true' && $left != 'null')
-            $left = "\$".$left;
-
-        if ($right[0] != '"' && $right[0] != "'" && !is_numeric($right[0]) && $right != 'false' && $right != 'true' && $right != 'null')
-            $right = "\$".$right;
-    }
-
-    private function if()
-    {
-        $search = "/@(\s?)+if(\s?)+([$\w\d\.\"' ]+)(\s?)+([<>!=]+)(\s?)+([\$\w\d\.\"' ]+)(\s?)+:(.*?)@(\s?)+endif/is";
-
-        Tag::match($search, function($left, $op, $right, $content = "") {
-
-            $this->config($left, $right);
-
-            $res  = "<?php if ($left $op $right) { ?>";
-            $res .= $content;
-            $res .= "<?php } ?>";
-            
-            Tag::replace($res);
-
-            $this->if();
+            self::replace("<?php if ($cond) : ?>");
         });
     }
 
-    private function if2()
-    {
-        $search = "/@(\s?)+if(\s?)+(.*?)(\s?)+:(.*?)@(\s?)+endif/is";
+    public function elseif() {
+        self::match('/@\s*elseif\s*\((.*?)\)/', function($cond) {
 
-        Tag::match($search, function($cond, $content) {
-
-            $res  = "<?php if ($cond) { ?>";
-            $res .= $content;
-            $res .= "<?php } ?>";
-
-            Tag::replace($res);
-
-            $this->if2();
+            self::replace("<?php elseif ($cond) : ?>");
         });
     }
 
-    private function else()
+    public function else()
     {
-        $search = "/@(\s?)+else(\s?)+:(.*?)/is";
+        self::match('/@\s*else/', function () {
 
-        Tag::match($search, function($content = "") {
-
-            $res  = "<?php } else { ?>";
-            $res .= $content;
-
-            Tag::replace($res);
-
-            $this->else();
+            self::replace("<?php else : ?>");
         });
     }
 
-    private function elseif()
+    public function endif()
     {
-        $search = "/@(\s?)+elif(\s?)+([\$\w\.]+)(\s?)+([<>!=]+)(\s?)+([\$\w\d\.\"' ]+)(\s?)+:(.*?)/is";
+        $regex = '/@\s*\/if/';
 
-        Tag::match($search, function($left, $op, $right, $content = "") {
+        self::match($regex, function () {
 
-            $this->config($left, $right);
-
-            $res  = "<?php } elseif ($left $op $right) { ?>";
-            $res .= $content;
-
-            Tag::replace($res);
-
-            $this->elseif();
+            self::replace("<?php endif ?>");
         });
     }
 }

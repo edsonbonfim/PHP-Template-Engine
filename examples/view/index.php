@@ -2,5 +2,5 @@
 
 @block content
     {{ $status ? 'HAHHA' : ':\\' }}
-    {{ url() }}
+    @{{ $status ? 'HAHHA' : ':\\' }}
 @endblock
