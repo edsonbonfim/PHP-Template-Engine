@@ -49,12 +49,9 @@ class Engine
             'Inheritance',
             'Block',
             'IncludeTag',
-//            'Statement',
             'Evaluate',
-            // 'Func',
             'Loop',
             'Condition',
-            // 'Expression'
         ]);
 
         return Tag::getContent();

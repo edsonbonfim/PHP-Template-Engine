@@ -15,14 +15,12 @@ class Condition extends Tag
     public function if()
     {
         self::match('/@\s*if\s*\((.*?)\)/', function($cond) {
-
             self::replace("<?php if ($cond) : ?>");
         });
     }
 
     public function elseif() {
         self::match('/@\s*elseif\s*\((.*?)\)/', function($cond) {
-
             self::replace("<?php elseif ($cond) : ?>");
         });
     }
@@ -30,17 +28,17 @@ class Condition extends Tag
     public function else()
     {
         self::match('/@\s*else/', function () {
-
             self::replace("<?php else : ?>");
         });
     }
 
     public function endif()
     {
-        $regex = '/@\s*\/if/';
+        self::match('/@\s*\/if/', function () {
+            self::replace("<?php endif ?>");
+        });
 
-        self::match($regex, function () {
-
+        self::match('/@\s*endif/', function () {
             self::replace("<?php endif ?>");
         });
     }

@@ -16,7 +16,6 @@ class Loop extends Tag
     private function for()
     {
         self::match('/@\s*for\s*\((.*?)\)/', function ($cond) {
-
             self::replace("<?php for ($cond) : ?>");
         });
     }
@@ -24,7 +23,6 @@ class Loop extends Tag
     private function endfor()
     {
         self::match('/@\s*\/for/', function () {
-
             self::replace("<?php endfor ?>");
         });
     }
@@ -32,7 +30,6 @@ class Loop extends Tag
     private function foreach()
     {
         self::match('/@\s*foreach\s*\((.*?)\)/', function ($cond) {
-
             self::replace("<?php foreach ($cond) : ?>");
         });
     }
@@ -40,7 +37,10 @@ class Loop extends Tag
     private function endforeach()
     {
         self::match('/@\s*\/foreach/', function () {
+            self::replace("<?php endforeach ?>");
+        });
 
+        self::match('/@\s*endforeach/', function () {
             self::replace("<?php endforeach ?>");
         });
     }
