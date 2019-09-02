@@ -6,8 +6,8 @@ class Evaluate extends Tag
 {
     public function __construct()
     {
-        self::match('{{\s*--(.*?)--\s*}}', function ($cond) {
-            self::replace("<?php /* $cond */ ?>");
+        self::match('/{{\s*--.*--\s*}}/', function () {
+            self::replace("");
         });
 
         self::match('/([^@]){{(.*?)}}/', function ($scape, $cond) {
